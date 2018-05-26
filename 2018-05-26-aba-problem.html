@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="https://mraye.github.io">
   <title>CAS(Compare And Swap)导致的ABA问题 | Mraye</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="CAS(Compare And Swap)导致的ABA问题问题描述  多线程情况下，每个线程使用CAS操作欲将数据A修改成B，当然我们只希望只有一个线程能够正确的修改数据，并且只修改一次。当并发的时候，其中一个线程已经将A成功的改成了B，但是在线程并发调度过程中尚未被调度，在这个期间，另外一个线程(不在并发中的请求线程)将B又修改成了A，那么原来并发中的线程又可以通过CAS操作将A改成B  测试用">
+  <meta name="description" content="问题描述  多线程情况下，每个线程使用CAS操作欲将数据A修改成B，当然我们只希望只有一个线程能够正确的修改数据，并且只修改一次。当并发的时候，其中一个线程已经将A成功的改成了B，但是在线程并发调度过程中尚未被调度，在这个期间，另外一个线程(不在并发中的请求线程)将B又修改成了A，那么原来并发中的线程又可以通过CAS操作将A改成B  测试用例:">
 <meta name="keywords" content="ABA">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CAS(Compare And Swap)导致的ABA问题">
 <meta property="og:url" content="https://mraye.github.io/2018-05-26-aba-problem.html">
 <meta property="og:site_name" content="Mraye">
-<meta property="og:description" content="CAS(Compare And Swap)导致的ABA问题问题描述  多线程情况下，每个线程使用CAS操作欲将数据A修改成B，当然我们只希望只有一个线程能够正确的修改数据，并且只修改一次。当并发的时候，其中一个线程已经将A成功的改成了B，但是在线程并发调度过程中尚未被调度，在这个期间，另外一个线程(不在并发中的请求线程)将B又修改成了A，那么原来并发中的线程又可以通过CAS操作将A改成B  测试用">
+<meta property="og:description" content="问题描述  多线程情况下，每个线程使用CAS操作欲将数据A修改成B，当然我们只希望只有一个线程能够正确的修改数据，并且只修改一次。当并发的时候，其中一个线程已经将A成功的改成了B，但是在线程并发调度过程中尚未被调度，在这个期间，另外一个线程(不在并发中的请求线程)将B又修改成了A，那么原来并发中的线程又可以通过CAS操作将A改成B  测试用例:">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-26T14:05:41.837Z">
+<meta property="og:updated_time" content="2018-05-26T14:21:42.710Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CAS(Compare And Swap)导致的ABA问题">
-<meta name="twitter:description" content="CAS(Compare And Swap)导致的ABA问题问题描述  多线程情况下，每个线程使用CAS操作欲将数据A修改成B，当然我们只希望只有一个线程能够正确的修改数据，并且只修改一次。当并发的时候，其中一个线程已经将A成功的改成了B，但是在线程并发调度过程中尚未被调度，在这个期间，另外一个线程(不在并发中的请求线程)将B又修改成了A，那么原来并发中的线程又可以通过CAS操作将A改成B  测试用">
+<meta name="twitter:description" content="问题描述  多线程情况下，每个线程使用CAS操作欲将数据A修改成B，当然我们只希望只有一个线程能够正确的修改数据，并且只修改一次。当并发的时候，其中一个线程已经将A成功的改成了B，但是在线程并发调度过程中尚未被调度，在这个期间，另外一个线程(不在并发中的请求线程)将B又修改成了A，那么原来并发中的线程又可以通过CAS操作将A改成B  测试用例:">
   
     <link rel="alternative" href="/atom.xml" title="Mraye" type="application/atom+xml">
   
@@ -163,7 +163,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="CAS-Compare-And-Swap-导致的ABA问题"><a href="#CAS-Compare-And-Swap-导致的ABA问题" class="headerlink" title="CAS(Compare And Swap)导致的ABA问题"></a>CAS(Compare And Swap)导致的ABA问题</h3><p>问题描述</p>
+        <p>问题描述</p>
 <blockquote>
 <p>多线程情况下，每个线程使用CAS操作欲将数据A修改成B，当然我们只希望只有一个线程能够正确的修改数据，并且只修改一次。当并发的时候，其中一个线程已经将A成功的改成了B，但是在线程并发调度过程中尚未被调度，在这个期间，另外一个线程(不在并发中的请求线程)将B又修改成了A，那么原来并发中的线程又可以通过CAS操作将A改成B</p>
 </blockquote>
@@ -442,11 +442,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ThreadLocal</a>
+                <a href="javascript:void(0)" class="js-tag color4">try</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">try</a>
+                <a href="javascript:void(0)" class="js-tag color2">ThreadLocal</a>
               </li>
              
               <li class="article-tag-list-item">
