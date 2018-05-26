@@ -143,131 +143,37 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-git配置多个账户" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-threadlocal-cognize" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018-05-26-git配置多个账户.html">git配置多个账户</a>
+      <a class="article-title" href="/2018-05-26-threadlocal-cognize.html">threadlocal-cognize</a>
     </h1>
   
 
         
-        <a href="/2018-05-26-git配置多个账户.html" class="archive-article-date">
-  	<time datetime="2018-05-26T08:49:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-26</time>
+        <a href="/2018-05-26-threadlocal-cognize.html" class="archive-article-date">
+  	<time datetime="2018-05-26T14:09:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="创建帐户"><a href="#创建帐户" class="headerlink" title="创建帐户"></a>创建帐户</h3><p>打开git-bash,查看原有帐户:  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ git config --list</span><br><span class="line"><span class="comment"># omit...</span></span><br><span class="line">filter.lfs.process=git-lfs filter-process</span><br><span class="line">credential.helper=manager</span><br><span class="line">user.name=a***w</span><br><span class="line">user.email=a***w@email.com</span><br></pre></td></tr></table></figure>
-<p>进入<code>~/.ssh</code>目录,可以看到原有的帐户默认使用<code>id_rsa</code>:  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ls</span><br><span class="line">id_rsa  id_rsa.pub  known_hosts</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2018-05-26-git配置多个账户.html#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018-05-26-git配置多个账户.html">阅读全文&#39; >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-书单" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017-01-01-书单.html">书单</a>
-    </h1>
-  
-
-        
-        <a href="/2017-01-01-书单.html" class="archive-article-date">
-  	<time datetime="2017-01-01T08:34:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>面朝大海,春暖花开</p>
-</blockquote>
-<h2 id="生活"><a href="#生活" class="headerlink" title="生活"></a>生活</h2><table>
-<thead>
-<tr>
-<th style="text-align:left">书名</th>
-<th style="text-align:left">作者</th>
-<th style="text-align:left">开始日期</th>
-<th style="text-align:left">结束日期</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left"><a href="">人性的弱点</a></td>
-<td style="text-align:left">[美]戴尔·卡耐基</td>
-<td style="text-align:left">2017-01-01</td>
-<td style="text-align:left">~</td>
-</tr>
-</tbody>
-</table>
-<hr>
+        <h3 id="ThreadLocal关键字"><a href="#ThreadLocal关键字" class="headerlink" title="ThreadLocal关键字"></a>ThreadLocal关键字</h3><p>线程局部变量，只有当前线程可以访问。既然只有当前线程可以访问，自然是线程安全的</p>
 <blockquote>
-<p><strong>文章历史：</strong><br><code>2017-01-01</code> 创建</p>
+<p>ThreadLocal instances are typically private static fields in classes that wish to associate state with a thread(ThreadLocal实例通常是一个类中的私有的属性<code>private static</code>,并且期望状态和线程相关联)</p>
 </blockquote>
-
+<h4 id="ThreadLocal生命周期"><a href="#ThreadLocal生命周期" class="headerlink" title="ThreadLocal生命周期"></a>ThreadLocal生命周期</h4><p>在ThreadLocal的API中指出：  </p>
+<blockquote>
+<p>Each thread holds an implicit reference to its copy of a thread-local variable as long as the thread is alive and the ThreadLocal instance is accessible; after a thread goes away, all of its copies of thread-local instances are subject to garbage collection (unless other references to these copies exist).<br>(只要当前线程存活并且ThreadLocal实例可以访问，每个线程都保存对其线程局部变量副本的隐式引用。线程消失后，线程本地实例的所有副本都将被垃圾收集（除非存在对这些副本的其他引用）)</p>
+</blockquote>
+        
+          <a class="article-more-a" href="/2018-05-26-threadlocal-cognize.html#more">more >></a>
+        
       
 
       
@@ -280,7 +186,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">ebook</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">ThreadLocal</a>
         		</li>
       		
 		</ul>
@@ -292,7 +198,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/book//" class="article-tag-list-link color5">book</a>
+        			<a href="/categories/multi-thread//" class="article-tag-list-link color3">multi-thread</a>
         		</li>
       		
 		</ul>
@@ -301,7 +207,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2017-01-01-书单.html">阅读全文&#39; >></a>
+          <a class="article-more-a" href="/2018-05-26-threadlocal-cognize.html">阅读全文&#39; >></a>
         </p>
       
 
@@ -331,74 +237,33 @@
 
 
   
-    <article id="post-hexo" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-aba-problem" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016-12-31-hexo.html">初识hexo及搭建Yilia主题博客</a>
+      <a class="article-title" href="/2018-05-26-aba-problem.html">CAS(Compare And Swap)导致的ABA问题</a>
     </h1>
   
 
         
-        <a href="/2016-12-31-hexo.html" class="archive-article-date">
-  	<time datetime="2016-12-31T03:51:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-31</time>
+        <a href="/2018-05-26-aba-problem.html" class="archive-article-date">
+  	<time datetime="2018-05-26T14:04:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="hexo基本命令"><a href="#hexo基本命令" class="headerlink" title="hexo基本命令"></a>hexo基本命令</h2><table>
-<thead>
-<tr>
-<th style="text-align:left">简称</th>
-<th style="text-align:left">全名</th>
-<th style="text-align:left">含义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">hexo n “blog”</td>
-<td style="text-align:left">hexo new “blog”</td>
-<td style="text-align:left">新建文章</td>
-</tr>
-<tr>
-<td style="text-align:left">hexo p</td>
-<td style="text-align:left">hexo public</td>
-<td style="text-align:left">~~</td>
-</tr>
-<tr>
-<td style="text-align:left">hexo g</td>
-<td style="text-align:left">hexo generate</td>
-<td style="text-align:left">生成</td>
-</tr>
-<tr>
-<td style="text-align:left">hexo s</td>
-<td style="text-align:left">hexo server</td>
-<td style="text-align:left">启动服务预览</td>
-</tr>
-<tr>
-<td style="text-align:left">hexo d</td>
-<td style="text-align:left">hexo deploy</td>
-<td style="text-align:left">部署</td>
-</tr>
-<tr>
-<td style="text-align:left">hexo s -g</td>
-<td style="text-align:left">hexo server –generate</td>
-<td style="text-align:left">发布</td>
-</tr>
-<tr>
-<td style="text-align:left">hexo d -g</td>
-<td style="text-align:left">hexo deploy –generate</td>
-<td style="text-align:left">部署</td>
-</tr>
-</tbody>
-</table>
+        <h3 id="CAS-Compare-And-Swap-导致的ABA问题"><a href="#CAS-Compare-And-Swap-导致的ABA问题" class="headerlink" title="CAS(Compare And Swap)导致的ABA问题"></a>CAS(Compare And Swap)导致的ABA问题</h3><p>问题描述</p>
+<blockquote>
+<p>多线程情况下，每个线程使用CAS操作欲将数据A修改成B，当然我们只希望只有一个线程能够正确的修改数据，并且只修改一次。当并发的时候，其中一个线程已经将A成功的改成了B，但是在线程并发调度过程中尚未被调度，在这个期间，另外一个线程(不在并发中的请求线程)将B又修改成了A，那么原来并发中的线程又可以通过CAS操作将A改成B</p>
+</blockquote>
+<p>测试用例:  </p>
         
-          <a class="article-more-a" href="/2016-12-31-hexo.html#more">more >></a>
+          <a class="article-more-a" href="/2018-05-26-aba-problem.html#more">more >></a>
         
       
 
@@ -412,21 +277,28 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ABA</a>
         		</li>
       		
 		</ul>
 	</div>
 
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/multi-thread//" class="article-tag-list-link color3">multi-thread</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2016-12-31-hexo.html">阅读全文&#39; >></a>
+          <a class="article-more-a" href="/2018-05-26-aba-problem.html">阅读全文&#39; >></a>
         </p>
       
 
@@ -456,6 +328,277 @@
 
 
   
+    <article id="post-java-equals-hashcode" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018-05-26-java-equals-hashcode.html">java中重写equals一定要重写hashCode方法</a>
+    </h1>
+  
+
+        
+        <a href="/2018-05-26-java-equals-hashcode.html" class="archive-article-date">
+  	<time datetime="2018-05-26T14:00:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="java中重写equals一定要重写hashCode方法"><a href="#java中重写equals一定要重写hashCode方法" class="headerlink" title="java中重写equals一定要重写hashCode方法"></a>java中重写equals一定要重写hashCode方法</h3><p>原作者博客地址: <a href="https://dzone.com/articles/working-with-hashcode-and-equals-in-java" target="_blank" rel="noopener">Working With hashcode() and equals()</a></p>
+<h4 id="equals和hashCode方法"><a href="#equals和hashCode方法" class="headerlink" title="equals和hashCode方法"></a>equals和hashCode方法</h4><ul>
+<li>equals(Object obj): 由Object类提供，用来判断当前对象和obj是否相等。JDK中默认实现方式是基于内存地址：只有两个对象的内存地址相等，那么它们才相等</li>
+<li>hashCode(): 该方法由Object类提供，返回一个整型数值代表了对象在内存的地址，对于每一个对象，hashCode()方法随机返回一个唯一的整型的数值</li>
+</ul>
+        
+          <a class="article-more-a" href="/2018-05-26-java-equals-hashcode.html#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">hashCode</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/java//" class="article-tag-list-link color5">java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018-05-26-java-equals-hashcode.html">阅读全文&#39; >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-try-catch-finally" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018-05-26-try-catch-finally.html">trycatchfinally的一些理解</a>
+    </h1>
+  
+
+        
+        <a href="/2018-05-26-try-catch-finally.html" class="archive-article-date">
+  	<time datetime="2018-05-26T13:56:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="trycatchfinally的一些理解"><a href="#trycatchfinally的一些理解" class="headerlink" title="trycatchfinally的一些理解"></a>trycatchfinally的一些理解</h3><h4 id="情景1-try-finally-with-return"><a href="#情景1-try-finally-with-return" class="headerlink" title="情景1:try-finally-with-return"></a>情景1:try-finally-with-return</h4><p>测试用例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">tfWithReturnTest</span><span class="params">()</span></span>&#123;</span><br><span class="line">   <span class="keyword">try</span>&#123;</span><br><span class="line">       System.out.println(<span class="string">"enter try block..."</span>);</span><br><span class="line">       <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">   &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">       System.out.println(<span class="string">"enter finally block..."</span>);</span><br><span class="line"><span class="comment">//            return 2;</span></span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//junit test case</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">tcfTest</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> rs  = tfWithReturnTest();</span><br><span class="line">    System.out.println(<span class="string">"result: "</span>+ rs);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2018-05-26-try-catch-finally.html#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">try</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/java//" class="article-tag-list-link color5">java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018-05-26-try-catch-finally.html">阅读全文&#39; >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-inputstream-no-reuse" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018-05-26-inputstream-no-reuse.html">InputStream不能重用问题</a>
+    </h1>
+  
+
+        
+        <a href="/2018-05-26-inputstream-no-reuse.html" class="archive-article-date">
+  	<time datetime="2018-05-26T13:43:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>问题：使用InpustStream读取文件内容，并且使用同一个InputStream进行对象反序列化的时候</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">readFromFile</span><span class="params">()</span></span>&#123;</span><br><span class="line"></span><br><span class="line">    File file = <span class="keyword">new</span> File(<span class="string">"person.data"</span>);</span><br><span class="line">    <span class="keyword">try</span> (InputStream is = <span class="keyword">new</span> FileInputStream(file)) &#123;</span><br><span class="line">        <span class="keyword">byte</span>[] bytes = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">1024</span>];</span><br><span class="line">        <span class="keyword">int</span> len = <span class="number">0</span>;</span><br><span class="line">        StringBuilder sb = <span class="keyword">new</span> StringBuilder();</span><br><span class="line">        <span class="keyword">while</span> ((len=is.read(bytes))!=-<span class="number">1</span>)&#123;</span><br><span class="line">            sb.append(<span class="keyword">new</span> String(bytes, <span class="string">"UTF-8"</span>));</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(sb.toString());</span><br><span class="line">        ObjectInputStream ois = <span class="keyword">new</span> ObjectInputStream(is);</span><br><span class="line">        Person person = (Person) ois.readObject();</span><br><span class="line">        System.out.println(person);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (FileNotFoundException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2018-05-26-inputstream-no-reuse.html#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">inputstream</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/java//" class="article-tag-list-link color5">java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018-05-26-inputstream-no-reuse.html">阅读全文&#39; >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 
 
@@ -549,7 +692,43 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ABA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">inputstream</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">hashCode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mybatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">cache</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">try</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">sql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">pageHelper</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ThreadLocal</a>
               </li>
              
               <li class="article-tag-list-item">

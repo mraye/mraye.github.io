@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://mraye.github.io">
-  <title>Tag: hexo | Mraye</title>
+  <title>trycatchfinally的一些理解 | Mraye</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="面朝大海 春暖花开">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Mraye">
-<meta property="og:url" content="https://mraye.github.io/tags/hexo/index.html">
+  <meta name="description" content="trycatchfinally的一些理解情景1:try-finally-with-return测试用例： 12345678910111213141516public int tfWithReturnTest()&amp;#123;   try&amp;#123;       System.out.println(&quot;enter try block...&quot;);       return 1;   &amp;#125;fina">
+<meta name="keywords" content="try">
+<meta property="og:type" content="article">
+<meta property="og:title" content="trycatchfinally的一些理解">
+<meta property="og:url" content="https://mraye.github.io/2018-05-26-try-catch-finally.html">
 <meta property="og:site_name" content="Mraye">
-<meta property="og:description" content="面朝大海 春暖花开">
+<meta property="og:description" content="trycatchfinally的一些理解情景1:try-finally-with-return测试用例： 12345678910111213141516public int tfWithReturnTest()&amp;#123;   try&amp;#123;       System.out.println(&quot;enter try block...&quot;);       return 1;   &amp;#125;fina">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-05-26T13:57:33.401Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mraye">
-<meta name="twitter:description" content="面朝大海 春暖花开">
+<meta name="twitter:title" content="trycatchfinally的一些理解">
+<meta name="twitter:description" content="trycatchfinally的一些理解情景1:try-finally-with-return测试用例： 12345678910111213141516public int tfWithReturnTest()&amp;#123;   try&amp;#123;       System.out.println(&quot;enter try block...&quot;);       return 1;   &amp;#125;fina">
   
     <link rel="alternative" href="/atom.xml" title="Mraye" type="application/atom+xml">
   
@@ -141,64 +143,195 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-try-catch-finally" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016-12-31-hexo.html" class="archive-article-date">
-  	<time datetime="2016-12-31T03:51:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-31</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016-12-31-hexo.html">初识hexo及搭建Yilia主题博客</a>
+    <h1 class="article-title" itemprop="name">
+      trycatchfinally的一些理解
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018-05-26-try-catch-finally.html" class="archive-article-date">
+  	<time datetime="2018-05-26T13:56:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="trycatchfinally的一些理解"><a href="#trycatchfinally的一些理解" class="headerlink" title="trycatchfinally的一些理解"></a>trycatchfinally的一些理解</h3><h4 id="情景1-try-finally-with-return"><a href="#情景1-try-finally-with-return" class="headerlink" title="情景1:try-finally-with-return"></a>情景1:try-finally-with-return</h4><p>测试用例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">tfWithReturnTest</span><span class="params">()</span></span>&#123;</span><br><span class="line">   <span class="keyword">try</span>&#123;</span><br><span class="line">       System.out.println(<span class="string">"enter try block..."</span>);</span><br><span class="line">       <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">   &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">       System.out.println(<span class="string">"enter finally block..."</span>);</span><br><span class="line"><span class="comment">//            return 2;</span></span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//junit test case</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">tcfTest</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> rs  = tfWithReturnTest();</span><br><span class="line">    System.out.println(<span class="string">"result: "</span>+ rs);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>结果:</p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">enter try block...</span><br><span class="line">enter finally block...</span><br><span class="line">result: 1</span><br></pre></td></tr></table></figure>
+<p>打开finally代码块中的return语句,再次执行testCase:  </p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">enter try block...</span><br><span class="line">enter finally block...</span><br><span class="line">result: 2</span><br></pre></td></tr></table></figure>
+<p><strong>可以发现，无论有没有return,程序都会执行finally块中的代码，如果finally中没有return,程序执行完try中代码便把控制权转交给finally,处理完finally中扩逻辑之后又把控制权转交给try中的return返回最后的结果;如果finally中存在return,程序执行完try中代码便把控制权转交给finally,处理完finally逻辑之后就直接返回结果，不再走try中的return</strong></p>
+<h4 id="情景2-try-finally-exception-with-return"><a href="#情景2-try-finally-exception-with-return" class="headerlink" title="情景2:try-finally-exception-with-return"></a>情景2:try-finally-exception-with-return</h4><p>测试用例:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">tfExceptionWithReturnTest</span><span class="params">()</span></span>&#123;</span><br><span class="line">   <span class="keyword">try</span>&#123;</span><br><span class="line">       System.out.println(<span class="string">"enter try block..."</span>);</span><br><span class="line">       <span class="keyword">if</span> (<span class="number">1</span>==<span class="number">1</span>) &#123;</span><br><span class="line">           <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"IllegalArgumentException in try block..."</span>);</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">   &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">       System.out.println(<span class="string">"enter finally block..."</span>);</span><br><span class="line">       <span class="comment">// return 2;</span></span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//junit test case</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">tcfTest</span><span class="params">()</span></span>&#123;</span><br><span class="line">   <span class="keyword">int</span> rs = tfExceptionWithReturnTest();</span><br><span class="line">   System.out.println(<span class="string">"result: "</span>+ rs);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>结果:  </p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">enter try block...</span><br><span class="line">enter finally block...</span><br><span class="line">java.lang.IllegalArgumentException: IllegalArgumentException in try block...</span><br></pre></td></tr></table></figure>
+<p>打开finally代码块中的return语句,再次执行结果:  </p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">enter try block...</span><br><span class="line">enter finally block...</span><br><span class="line">result: 2</span><br></pre></td></tr></table></figure>
+<p><strong>可以发现，无论有没有return,程序都会执行finally块中的代码，如果finally中没有return,程序执行完try中代码将要抛出异常时，便把控制权转交给finally,处理完finally中扩逻辑之后又把控制权转交给try，让try中执行<code>throw exception</code>的操作;如果finally中存在return,程序执行完try中代码将要抛出异常时，便把控制权转交给finally,处理完finally逻辑之后就直接返回结果，不再让try中执行<code>throw exception</code>的操作</strong></p>
+<h4 id="情景3-try-catch-finally-exception-with-return"><a href="#情景3-try-catch-finally-exception-with-return" class="headerlink" title="情景3:try-catch-finally-exception-with-return"></a>情景3:try-catch-finally-exception-with-return</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">tcfWithReturnTest</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">try</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"enter try block..."</span>);</span><br><span class="line"><span class="comment">//            if (1==1) &#123;</span></span><br><span class="line"><span class="comment">//                throw new IllegalArgumentException("IllegalArgumentException in try block...");</span></span><br><span class="line"><span class="comment">//            &#125;</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;<span class="keyword">catch</span> (Throwable t)&#123;</span><br><span class="line">        System.out.println(<span class="string">"enter catch block..."</span>);</span><br><span class="line"><span class="comment">//            throw new  RuntimeException("throw runtimeException in catch block...");</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">    &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">"enter finally block..."</span>);</span><br><span class="line"><span class="comment">//            return 3;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//junit test case</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">tcfTest</span><span class="params">()</span></span>&#123;</span><br><span class="line"><span class="comment">//        int rs  = tfWithReturnTest();</span></span><br><span class="line"><span class="comment">//        int rs = tfExceptionWithReturnTest();</span></span><br><span class="line">    <span class="keyword">int</span> rs = tcfWithReturnTest();</span><br><span class="line">    System.out.println(<span class="string">"result: "</span>+ rs);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>1.正常运行结果:  </p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">enter try block...</span><br><span class="line">enter finally block...</span><br><span class="line">result: 1</span><br></pre></td></tr></table></figure>
+<p>2.打开finally代码块中的return语句：  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">tcfWithReturnTest</span><span class="params">()</span></span>&#123;</span><br><span class="line">       <span class="keyword">try</span>&#123;</span><br><span class="line">           System.out.println(<span class="string">"enter try block..."</span>);</span><br><span class="line"><span class="comment">//            if (1==1) &#123;</span></span><br><span class="line"><span class="comment">//                throw new IllegalArgumentException("IllegalArgumentException in try block...");</span></span><br><span class="line"><span class="comment">//            &#125;</span></span><br><span class="line">           <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">       &#125;<span class="keyword">catch</span> (Throwable t)&#123;</span><br><span class="line">           System.out.println(<span class="string">"enter catch block..."</span>);</span><br><span class="line"><span class="comment">//            throw new  RuntimeException("throw runtimeException in catch block...");</span></span><br><span class="line">           <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">       &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">           System.out.println(<span class="string">"enter finally block..."</span>);</span><br><span class="line">           <span class="keyword">return</span> <span class="number">3</span>;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<p>结果:<br><figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">enter try block...</span><br><span class="line">enter finally block...</span><br><span class="line">result: 3                   //直接在finally块中返回，而不是将控制权交给try,让try返回结果</span><br></pre></td></tr></table></figure></p>
+<p>3.打开try中的抛出异常代码:  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">tcfWithReturnTest</span><span class="params">()</span></span>&#123;</span><br><span class="line">   <span class="keyword">try</span>&#123;</span><br><span class="line">       System.out.println(<span class="string">"enter try block..."</span>);</span><br><span class="line">       <span class="keyword">if</span> (<span class="number">1</span>==<span class="number">1</span>) &#123;</span><br><span class="line">           <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"IllegalArgumentException in try block..."</span>);</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">   &#125;<span class="keyword">catch</span> (Throwable t)&#123;</span><br><span class="line">       System.out.println(<span class="string">"enter catch block..."</span>);</span><br><span class="line"><span class="comment">//            throw new  RuntimeException("throw runtimeException in catch block...");</span></span><br><span class="line">       <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">   &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">       System.out.println(<span class="string">"enter finally block..."</span>);</span><br><span class="line"><span class="comment">//            return 3;</span></span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>结果:  </p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">enter try block...</span><br><span class="line">enter catch block...</span><br><span class="line">enter finally block...</span><br><span class="line">result: 2                   //返回的是catch中的值</span><br></pre></td></tr></table></figure>
+<p><strong>可以看到，finally代码块无论如何都会被执行，在try中抛出异常之后，catch代码块中捕获异常，处理catch中的逻辑之后在抛出异常之前(或return之前)，将控制权交给finally块中，但finally中没有retun关键字，就又将控制权交给catch,由catch抛出异常(或直接return返回值)</strong></p>
+<p>综上所述:</p>
+<ul>
+<li>finally在try-catch-finally语句中一定会被执行</li>
+<li>如果finally中没有return关键字，程序会在执行finally代码块中的逻辑之后将控制权交给try或者是catch代码块;如果在try中抛出异常，先执行catch中逻辑,如果catch中return或者是throw Exception操作时，先将控制权交给finally,在finally中处理逻辑之后，将控制权交给catch,由catch执行throw Exception和return的操作</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">try</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/java//" class="article-tag-list-link color5">java</a>
+        		</li>
+      		
+		</ul>
+	</div>
 
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://mraye.github.io/2018-05-26-try-catch-finally.html" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2018-05-26-java-equals-hashcode.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          java中重写equals一定要重写hashCode方法
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2018-05-26-inputstream-no-reuse.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">InputStream不能重用问题</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -221,9 +354,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

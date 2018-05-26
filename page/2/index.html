@@ -6,12 +6,12 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://mraye.github.io">
-  <title>Tag: hexo | Mraye</title>
+  <title>Mraye</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="面朝大海 春暖花开">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Mraye">
-<meta property="og:url" content="https://mraye.github.io/tags/hexo/index.html">
+<meta property="og:url" content="https://mraye.github.io/page/2/index.html">
 <meta property="og:site_name" content="Mraye">
 <meta property="og:description" content="面朝大海 春暖花开">
 <meta property="og:locale" content="zh-CN">
@@ -143,62 +143,483 @@
           <div id="js-content" class="content-ll">
             
   
-  
+    <article id="post-mybatis-cache-invalid" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016-12-31-hexo.html" class="archive-article-date">
-  	<time datetime="2016-12-31T03:51:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-31</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
     <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016-12-31-hexo.html">初识hexo及搭建Yilia主题博客</a>
+      <a class="article-title" href="/2018-05-26-mybatis-cache-invalid.html">spring结合mybatis时一级缓存失效问题</a>
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018-05-26-mybatis-cache-invalid.html" class="archive-article-date">
+  	<time datetime="2018-05-26T13:37:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>之前了解到mybatis的一级缓存是默认开启的，作用域是sqlSession,是基 HashMap的本地缓存。不同的SqlSession之间的缓存数据区域互不影响。当进行select、update、delete操作后并且commit事物到数据库之后，sqlSession中的Cache自动被清空</p>
+</blockquote>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">setting</span> <span class="attr">name</span>=<span class="string">"localCacheScope"</span> <span class="attr">value</span>=<span class="string">"SESSION"</span>/&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h4><p>spring结合mybatis后，一级缓存作用：  </p>
+<ul>
+<li>在未开启事物的情况之下，每次查询，spring都会关闭旧的sqlSession而创建新的sqlSession,因此此时的一级缓存是没有启作用的</li>
+<li>在开启事物的情况之下，spring使用threadLocal获取当前资源绑定同一个sqlSession，因此此时一级缓存是有效的</li>
+</ul>
+        
+          <a class="article-more-a" href="/2018-05-26-mybatis-cache-invalid.html#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">mybatis</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">cache</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/mybatis//" class="article-tag-list-link color3">mybatis</a>
+        		</li>
+      		
+		</ul>
+	</div>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018-05-26-mybatis-cache-invalid.html">阅读全文&#39; >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
+    <article id="post-pagehelper-onetomany" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
-    </div></section>
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018-05-26-pagehelper-onetomany.html">mybatis中使用pageHelper实现一对多分页</a>
+    </h1>
   
 
+        
+        <a href="/2018-05-26-pagehelper-onetomany.html" class="archive-article-date">
+  	<time datetime="2018-05-26T13:32:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-26</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="mybatis中使用pageHelper实现一对多分页"><a href="#mybatis中使用pageHelper实现一对多分页" class="headerlink" title="mybatis中使用pageHelper实现一对多分页"></a>mybatis中使用pageHelper实现一对多分页</h3><p>项目里经常遇到一对多分页的问题，以前认为PageHelper不支持一对多的分页，还一直自己重写分页方法。。。。</p>
+<h4 id="数据库表"><a href="#数据库表" class="headerlink" title="数据库表"></a>数据库表</h4><ul>
+<li>country表</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="string">`country`</span> (</span><br><span class="line">  <span class="string">`country_id`</span> <span class="built_in">smallint</span>(<span class="number">5</span>) <span class="keyword">unsigned</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT,</span><br><span class="line">  <span class="string">`country`</span> <span class="built_in">varchar</span>(<span class="number">50</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">  <span class="string">`last_update`</span> <span class="keyword">timestamp</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="keyword">CURRENT_TIMESTAMP</span> <span class="keyword">ON</span> <span class="keyword">UPDATE</span> <span class="keyword">CURRENT_TIMESTAMP</span>,</span><br><span class="line">  PRIMARY <span class="keyword">KEY</span> (<span class="string">`country_id`</span>)</span><br><span class="line">) <span class="keyword">ENGINE</span>=<span class="keyword">InnoDB</span> AUTO_INCREMENT=<span class="number">110</span> <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span>=utf8;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>city表</li>
+</ul>
+        
+          <a class="article-more-a" href="/2018-05-26-pagehelper-onetomany.html#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">mybatis</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">pageHelper</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/mybatis//" class="article-tag-list-link color3">mybatis</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018-05-26-pagehelper-onetomany.html">阅读全文&#39; >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-row-col-transfer-fst" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018-05-26-row-col-transfer-fst.html">mysql行列转换(一)</a>
+    </h1>
+  
+
+        
+        <a href="/2018-05-26-row-col-transfer-fst.html" class="archive-article-date">
+  	<time datetime="2018-05-26T13:25:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="情景一"><a href="#情景一" class="headerlink" title="情景一"></a>情景一</h4><figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">        +----+--------+---------+</span><br><span class="line">        | id | month  | pay_fee |</span><br><span class="line">        +----+--------+---------+</span><br><span class="line">        |  1 | 201801 |      10 |</span><br><span class="line">        |  2 | 201802 |      11 |</span><br><span class="line">        |  3 | 201803 |      54 |</span><br><span class="line">        |  4 | 201804 |      32 |</span><br><span class="line">        +----+--------+---------+  </span><br><span class="line">                    |</span><br><span class="line">                    V</span><br><span class="line">+--------+--------+--------+--------+</span><br><span class="line">| 201801 | 201802 | 201803 | 201804 |</span><br><span class="line">+--------+--------+--------+--------+</span><br><span class="line">|     10 |     11 |     54 |     32 |</span><br><span class="line">+--------+--------+--------+--------+</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2018-05-26-row-col-transfer-fst.html#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">sql</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/mysql//" class="article-tag-list-link color1">mysql</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018-05-26-row-col-transfer-fst.html">阅读全文&#39; >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-git配置多个账户" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018-05-26-git配置多个账户.html">git配置多个账户</a>
+    </h1>
+  
+
+        
+        <a href="/2018-05-26-git配置多个账户.html" class="archive-article-date">
+  	<time datetime="2018-05-26T08:49:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="创建帐户"><a href="#创建帐户" class="headerlink" title="创建帐户"></a>创建帐户</h3><p>打开git-bash,查看原有帐户:  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ git config --list</span><br><span class="line"><span class="comment"># omit...</span></span><br><span class="line">filter.lfs.process=git-lfs filter-process</span><br><span class="line">credential.helper=manager</span><br><span class="line">user.name=a***w</span><br><span class="line">user.email=a***w@email.com</span><br></pre></td></tr></table></figure>
+<p>进入<code>~/.ssh</code>目录,可以看到原有的帐户默认使用<code>id_rsa</code>:  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ls</span><br><span class="line">id_rsa  id_rsa.pub  known_hosts</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2018-05-26-git配置多个账户.html#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018-05-26-git配置多个账户.html">阅读全文&#39; >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-书单" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017-01-01-书单.html">书单</a>
+    </h1>
+  
+
+        
+        <a href="/2017-01-01-书单.html" class="archive-article-date">
+  	<time datetime="2017-01-01T08:34:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-01</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>面朝大海,春暖花开</p>
+</blockquote>
+<h2 id="生活"><a href="#生活" class="headerlink" title="生活"></a>生活</h2><table>
+<thead>
+<tr>
+<th style="text-align:left">书名</th>
+<th style="text-align:left">作者</th>
+<th style="text-align:left">开始日期</th>
+<th style="text-align:left">结束日期</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="">人性的弱点</a></td>
+<td style="text-align:left">[美]戴尔·卡耐基</td>
+<td style="text-align:left">2017-01-01</td>
+<td style="text-align:left">~</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<blockquote>
+<p><strong>文章历史：</strong><br><code>2017-01-01</code> 创建</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">ebook</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/book//" class="article-tag-list-link color5">book</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017-01-01-书单.html">阅读全文&#39; >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+    </nav>
+  
 
 
           </div>
@@ -220,10 +641,10 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: false,
+		isHome: true,
 		isPost: false,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
