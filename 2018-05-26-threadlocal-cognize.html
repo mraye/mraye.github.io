@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Mraye">
 <meta property="og:description" content="ThreadLocal关键字线程局部变量，只有当前线程可以访问。既然只有当前线程可以访问，自然是线程安全的  ThreadLocal instances are typically private static fields in classes that wish to associate state with a thread(ThreadLocal实例通常是一个类中的私有的属性private">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-26T14:10:23.336Z">
+<meta property="og:updated_time" content="2018-05-26T14:18:08.624Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="threadlocal-cognize">
 <meta name="twitter:description" content="ThreadLocal关键字线程局部变量，只有当前线程可以访问。既然只有当前线程可以访问，自然是线程安全的  ThreadLocal instances are typically private static fields in classes that wish to associate state with a thread(ThreadLocal实例通常是一个类中的私有的属性private">
@@ -168,10 +168,10 @@
 <p>ThreadLocal instances are typically private static fields in classes that wish to associate state with a thread(ThreadLocal实例通常是一个类中的私有的属性<code>private static</code>,并且期望状态和线程相关联)</p>
 </blockquote>
 <h4 id="ThreadLocal生命周期"><a href="#ThreadLocal生命周期" class="headerlink" title="ThreadLocal生命周期"></a>ThreadLocal生命周期</h4><p>在ThreadLocal的API中指出：  </p>
+<a id="more"></a>
 <blockquote>
 <p>Each thread holds an implicit reference to its copy of a thread-local variable as long as the thread is alive and the ThreadLocal instance is accessible; after a thread goes away, all of its copies of thread-local instances are subject to garbage collection (unless other references to these copies exist).<br>(只要当前线程存活并且ThreadLocal实例可以访问，每个线程都保存对其线程局部变量副本的隐式引用。线程消失后，线程本地实例的所有副本都将被垃圾收集（除非存在对这些副本的其他引用）)</p>
 </blockquote>
-<a id="more"></a>
 <h4 id="ThreadLocal内部实现"><a href="#ThreadLocal内部实现" class="headerlink" title="ThreadLocal内部实现"></a>ThreadLocal内部实现</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">set</span><span class="params">(T value)</span> </span>&#123;</span><br><span class="line">    Thread t = Thread.currentThread();</span><br><span class="line">    ThreadLocalMap map = getMap(t);</span><br><span class="line">    <span class="keyword">if</span> (map != <span class="keyword">null</span>)</span><br><span class="line">        map.set(<span class="keyword">this</span>, value);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        createMap(t, value);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>在ThreadLocal的set方法中，先获取当前线程对象，<code>getMap</code>方法通过当前线程获取<code>ThreadLocalMap</code>对象[可以当成是类似是map]，如果map不为空，则将当前<code>threadlocal</code>实例作为key设置到<code>ThreadLocalMap</code>中,不然先创建<code>ThreadLocalMap</code>,然后设值</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> T <span class="title">get</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    Thread t = Thread.currentThread();</span><br><span class="line">    ThreadLocalMap map = getMap(t);</span><br><span class="line">    <span class="keyword">if</span> (map != <span class="keyword">null</span>) &#123;</span><br><span class="line">        ThreadLocalMap.Entry e = map.getEntry(<span class="keyword">this</span>);</span><br><span class="line">        <span class="keyword">if</span> (e != <span class="keyword">null</span>) &#123;</span><br><span class="line">            <span class="meta">@SuppressWarnings</span>(<span class="string">"unchecked"</span>)</span><br><span class="line">            T result = (T)e.value;</span><br><span class="line">            <span class="keyword">return</span> result;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> setInitialValue();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">private</span> T <span class="title">setInitialValue</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    T value = initialValue();</span><br><span class="line">    Thread t = Thread.currentThread();</span><br><span class="line">    ThreadLocalMap map = getMap(t);</span><br><span class="line">    <span class="keyword">if</span> (map != <span class="keyword">null</span>)</span><br><span class="line">        map.set(<span class="keyword">this</span>, value);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        createMap(t, value);</span><br><span class="line">    <span class="keyword">return</span> value;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -428,11 +428,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">inputstream</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
+                <a href="javascript:void(0)" class="js-tag color2">inputstream</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -448,7 +448,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">try</a>
+                <a href="javascript:void(0)" class="js-tag color1">pageHelper</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -456,11 +456,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">pageHelper</a>
+                <a href="javascript:void(0)" class="js-tag color2">ThreadLocal</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ThreadLocal</a>
+                <a href="javascript:void(0)" class="js-tag color4">try</a>
               </li>
              
               <li class="article-tag-list-item">
