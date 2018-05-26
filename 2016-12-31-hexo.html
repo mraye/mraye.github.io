@@ -6,18 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://mraye.github.io">
-  <title>Archives: 2016/12 | Mraye</title>
+  <title>初识hexo及搭建Yilia主题博客 | Mraye</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="面朝大海 春暖花开">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Mraye">
-<meta property="og:url" content="https://mraye.github.io/archives/2016/12/index.html">
+  <meta name="description" content="hexo基本命令   简称 全名 含义     hexo n “blog” hexo new “blog” 新建文章   hexo p hexo public ~~   hexo g hexo generate 生成   hexo s hexo server 启动服务预览   hexo d hexo deploy 部署   hexo s -g hexo server –generate 发布">
+<meta name="keywords" content="hexo,yilia">
+<meta property="og:type" content="article">
+<meta property="og:title" content="初识hexo及搭建Yilia主题博客">
+<meta property="og:url" content="https://mraye.github.io/2016-12-31-hexo.html">
 <meta property="og:site_name" content="Mraye">
-<meta property="og:description" content="面朝大海 春暖花开">
+<meta property="og:description" content="hexo基本命令   简称 全名 含义     hexo n “blog” hexo new “blog” 新建文章   hexo p hexo public ~~   hexo g hexo generate 生成   hexo s hexo server 启动服务预览   hexo d hexo deploy 部署   hexo s -g hexo server –generate 发布">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://mraye.github.io/2016-12-31-hexo/20170101105937.png">
+<meta property="og:updated_time" content="2018-05-26T09:00:01.143Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mraye">
-<meta name="twitter:description" content="面朝大海 春暖花开">
+<meta name="twitter:title" content="初识hexo及搭建Yilia主题博客">
+<meta name="twitter:description" content="hexo基本命令   简称 全名 含义     hexo n “blog” hexo new “blog” 新建文章   hexo p hexo public ~~   hexo g hexo generate 生成   hexo s hexo server 启动服务预览   hexo d hexo deploy 部署   hexo s -g hexo server –generate 发布">
+<meta name="twitter:image" content="https://mraye.github.io/2016-12-31-hexo/20170101105937.png">
   
     <link rel="alternative" href="/atom.xml" title="Mraye" type="application/atom+xml">
   
@@ -141,36 +145,292 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-hexo" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016-12-31-hexo.html" class="archive-article-date">
-  	<time datetime="2016-12-31T03:51:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-31</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016-12-31-hexo.html">初识hexo及搭建Yilia主题博客</a>
+    <h1 class="article-title" itemprop="name">
+      初识hexo及搭建Yilia主题博客
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2016-12-31-hexo.html" class="archive-article-date">
+  	<time datetime="2016-12-31T03:51:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-31</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="hexo基本命令"><a href="#hexo基本命令" class="headerlink" title="hexo基本命令"></a>hexo基本命令</h2><table>
+<thead>
+<tr>
+<th style="text-align:left">简称</th>
+<th style="text-align:left">全名</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">hexo n “blog”</td>
+<td style="text-align:left">hexo new “blog”</td>
+<td style="text-align:left">新建文章</td>
+</tr>
+<tr>
+<td style="text-align:left">hexo p</td>
+<td style="text-align:left">hexo public</td>
+<td style="text-align:left">~~</td>
+</tr>
+<tr>
+<td style="text-align:left">hexo g</td>
+<td style="text-align:left">hexo generate</td>
+<td style="text-align:left">生成</td>
+</tr>
+<tr>
+<td style="text-align:left">hexo s</td>
+<td style="text-align:left">hexo server</td>
+<td style="text-align:left">启动服务预览</td>
+</tr>
+<tr>
+<td style="text-align:left">hexo d</td>
+<td style="text-align:left">hexo deploy</td>
+<td style="text-align:left">部署</td>
+</tr>
+<tr>
+<td style="text-align:left">hexo s -g</td>
+<td style="text-align:left">hexo server –generate</td>
+<td style="text-align:left">发布</td>
+</tr>
+<tr>
+<td style="text-align:left">hexo d -g</td>
+<td style="text-align:left">hexo deploy –generate</td>
+<td style="text-align:left">部署</td>
+</tr>
+</tbody>
+</table>
+<a id="more"></a>
+<h2 id="Yilia主题搭建博客"><a href="#Yilia主题搭建博客" class="headerlink" title="Yilia主题搭建博客"></a>Yilia主题搭建博客</h2><p>博客目录：<br><!-- ![目录](img/20170101105937.png) --><br><img src="/2016-12-31-hexo/20170101105937.png" title="这是一个新的博客的图片的说明"></p>
+<h3 id="获取Yilia主题"><a href="#获取Yilia主题" class="headerlink" title="获取Yilia主题"></a>获取Yilia主题</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/litten/hexo-theme-yilia.git yilia</span><br></pre></td></tr></table></figure>
+<h3 id="根目录下-config-yml配置"><a href="#根目录下-config-yml配置" class="headerlink" title="根目录下_config.yml配置"></a>根目录下_config.yml配置</h3><p>进入目录<code>blog\</code>下中的_config.yml文件配置如下：  </p>
+<pre><code># Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Site
+title: mraye # 博客标题
+subtitle: 面朝大海 春暖花开 #博客副标题
+description: 面朝大海 春暖花开 #博客副标题
+author: mraye
+language: zh-CN #语言
+timezone: Asia/Shanghai #时区
+
+# URL
+## If your site is put in a subdirectory, set url as &apos;http://yoursite.com/child&apos; and root as &apos;/child/&apos;
+url: &apos;https://mraye.github.io/&apos;  #用于绑定域名, 其他的不需要配置
+root: /
+permalink: :year/:month/:day/:title/
+permalink_defaults:
+
+# Directory
+source_dir: source #源文件
+public_dir: public #生成的网页文件
+tag_dir: tags #标签
+archive_dir: archives #归档
+category_dir: categories #分类
+code_dir: downloads/code
+i18n_dir: :lang #国际化
+skip_render:
+
+# Writing
+new_post_name: :title.md # File name of new posts
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link: true # Open external links in new tab
+filename_case: 0
+render_drafts: false
+post_asset_folder: true
+relative_link: false
+future: true
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace:
+
+# Category &amp; Tag
+default_category: uncategorized
+category_map:
+tag_map:
+
+# Archives
+#Archives 默认值为2,修改为1,Archives页面就只会列出标题,而非全文
+## 2: Enable pagination
+## 1: Disable pagination
+## 0: Fully Disable
+## Archives
+# 2: 开启分页
+# 1: 禁用分页
+# 0: 全部禁用
+archive: 1
+category: 1
+tag: 1
+
+## server_ip: 0.0.0.0
+logger: false
+logger_format:
+
+jsonContent:
+    meta: false
+    pages: false
+    posts:
+      title: true
+      date: true
+      path: true
+      text: true
+      raw: false
+      content: false
+      slug: false
+      updated: false
+      comments: false
+      link: false
+      permalink: false
+      excerpt: false
+      categories: false
+      tags: true
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 5 #每页文章数, 设置成 0 禁用分页
+pagination_dir: page
+
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: yilia
+
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: git  #部署类型, 本文使用Github
+  repository: git@github.com:mraye/mraye.github.io.git #部署的仓库的SSH
+  branch: master
+
+# plugins:
+# - hexo-generator-feed   #此插件用于RSS订阅
+</code></pre><h3 id="主题Yilia中-config-yml配置"><a href="#主题Yilia中-config-yml配置" class="headerlink" title="主题Yilia中_config.yml配置"></a>主题Yilia中_config.yml配置</h3><p>进入目录<code>blog\themes\yilia\</code>下中的_config.yml文件<br>yilia主题中的_config.yml配置:   </p>
+<pre><code># Header
+menu:
+  主页: /
+  归档: /archives
+#  关于我: /about
+#  标签: /categories
+  # 归档: /categories/hexo
+  # 所有文章: /archives
+#  随笔: /tags/随笔/
+# SubNav
+subnav:
+  github: &quot;https://github.com/mraye&quot;
+  # weibo: &quot;#&quot;
+  # rss: &quot;#&quot;
+  #douban: &quot;#&quot;
+  #mail: &quot;mailto:litten225@qq.com&quot;
+  #facebook: &quot;#&quot;
+rss: /atom.xml
+# 是否需要修改 root 路径
+# 如果您的网站存放在子目录中，例如 http://yoursite.com/blog，
+# 请将您的 url 设为 http://yoursite.com/blog 并把 root 设为 /blog/。
+root:
+
+# Content
+# 文章太长，截断按钮文字
+excerpt_link: more
+# 文章卡片右下角常驻链接，不需要请设置为false
+show_all_link: &apos;阅读全文&apos;
+fancybox: true
+# 数学公式
+mathjax: false
+# 是否在新窗口打开链接
+open_in_new: false
+
+# 打赏
+# 请在需要打赏的文章的md文件头部，设置属性reward: true
+
+# 打赏基础设定：0-关闭打赏； 1-文章对应的md文件里有reward:true属性，才有打赏； 2-所有文章均有打赏
+reward_type: 0
+# 打赏wording
+reward_wording: &apos;谢谢你请我吃糖果&apos;
+# 支付宝二维码图片地址，跟你设置头像的方式一样。比如：/assets/img/alipay.jpg
+alipay:
+# 微信二维码图片地址
+weixin:
+
+# Miscellaneous
+google_analytics: &apos;&apos;
+favicon: /favicon.png
+
+#你的头像url
+avatar: /img/avatar.jpg # 自定义图片放在 /themes/yilia/source/img/下即可
+
+#是否开启分享
+share_jia: false
+
+#是否开启多说评论，填写你在多说申请的项目名称 duoshuo: duoshuo-key
+#若使用disqus，请在博客config文件中填写disqus_shortname，并关闭多说评论
+duoshuo: mraye #就是在设置多说域名.duo.com之前，例如域名为xxx.duoshuo.com,那么这里就写xxx
+
+#是否开启云标签
+tagcloud: true
+
+# 按年份归档,被坑了好久
+nav:
+    name: By Year
+    url: /archives
+
+# 智能菜单
+# 如不需要，将该对应项置为false
+# 比如
+#smart_menu:
+#  friends: false
+smart_menu:
+  innerArchive: &apos;所有文章&apos;
+  aboutme: &apos;关于我&apos;
+
+#开启——
+aboutme: 面朝大海，春暖花开  
+</code></pre><h3 id="主题完善"><a href="#主题完善" class="headerlink" title="主题完善"></a>主题完善</h3><h4 id="修改头像"><a href="#修改头像" class="headerlink" title="修改头像"></a>修改头像</h4><p>将头像图片放在<code>/themes/yilia/source/img/avatar.jpg</code>中，然后在yilia的配置文件<code>_confing.yml</code>中配置:    </p>
+<pre><code># Miscellaneous
+# google_analytics: &apos;&apos;
+favicon: /favicon.png
+</code></pre><h4 id="修改背景颜色"><a href="#修改背景颜色" class="headerlink" title="修改背景颜色"></a>修改背景颜色</h4><p>个人喜欢暗黑色，所以就将背景颜色稍稍修改了一下,找到<code>/themes/yilia/source/main.css</code>下的<code>#container.show .anm-canvas</code>属性，修改为如下就可以:      </p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#container</span><span class="selector-class">.show</span> <span class="selector-class">.anm-canvas</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: block;</span><br><span class="line">    <span class="attribute">position</span>: fixed;</span><br><span class="line">    <span class="attribute">background-color</span>: <span class="number">#272822</span>  # &lt;&lt;&lt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="自动生成目录"><a href="#自动生成目录" class="headerlink" title="自动生成目录"></a>自动生成目录</h4><p>在<code>/themes/yilia/layout/_partial/article.ejs</code>中找到<code>&lt;%- post.content %&gt;</code>位置,在<code>&lt;%- post.content %&gt;</code>的前面加入一下代码:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">else</span> &#123; %&gt;</span><br><span class="line">       &lt;% <span class="keyword">if</span>(!index &amp;&amp; post.toc &amp;&amp; post.toc !== <span class="literal">false</span>)&#123; %&gt;</span><br><span class="line">          &lt;div id=<span class="string">"toc"</span> class=<span class="string">"toc-article"</span>&gt;</span><br><span class="line">            &lt;strong class=<span class="string">"toc-title"</span>&gt;文章目录&lt;/strong&gt;</span><br><span class="line">            &lt;%- toc(post.content) %&gt;</span><br><span class="line">          &lt;/div&gt;</span><br><span class="line">        &lt;%&#125;%&gt;</span><br><span class="line">        &lt;%- post.content %&gt;</span><br><span class="line">&lt;% &#125; %&gt;</span><br></pre></td></tr></table></figure></p>
+<p>在每次写文章的时候只需要将<code>toc</code>设置为<code>true</code>即可,如下:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">title: 初识hexo及搭建Yilia主题博客</span><br><span class="line">date: 2016-12-31 11:51:18</span><br><span class="line">tags: [hexo, yilia]</span><br><span class="line">toc: <span class="literal">true</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="hexo写作技巧"><a href="#hexo写作技巧" class="headerlink" title="hexo写作技巧"></a>hexo写作技巧</h3><ul>
+<li>若希望页面显示时内容在一定程度就不显示,使用<code>more</code>标签:  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- more --&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<blockquote>
+<p><strong>文章历史：</strong><br><code>2016-12-31</code> 创建</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -186,19 +446,123 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://mraye.github.io/2016-12-31-hexo.html" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2017-01-01-书单.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          书单
+        
+      </div>
+    </a>
   
   
-    </div></section>
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#hexo基本命令"><span class="toc-number">1.</span> <span class="toc-text">hexo基本命令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Yilia主题搭建博客"><span class="toc-number">2.</span> <span class="toc-text">Yilia主题搭建博客</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#获取Yilia主题"><span class="toc-number">2.1.</span> <span class="toc-text">获取Yilia主题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#根目录下-config-yml配置"><span class="toc-number">2.2.</span> <span class="toc-text">根目录下_config.yml配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#主题Yilia中-config-yml配置"><span class="toc-number">2.3.</span> <span class="toc-text">主题Yilia中_config.yml配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#主题完善"><span class="toc-number">2.4.</span> <span class="toc-text">主题完善</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#修改头像"><span class="toc-number">2.4.1.</span> <span class="toc-text">修改头像</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#修改背景颜色"><span class="toc-number">2.4.2.</span> <span class="toc-text">修改背景颜色</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#自动生成目录"><span class="toc-number">2.4.3.</span> <span class="toc-text">自动生成目录</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#hexo写作技巧"><span class="toc-number">2.5.</span> <span class="toc-text">hexo写作技巧</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -221,8 +585,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
