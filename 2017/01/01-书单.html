@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://mraye.github.io">
-  <title>java中重写equals一定要重写hashCode方法 | Mraye</title>
+  <title>书单 | Mraye</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="java中重写equals一定要重写hashCode方法原作者博客地址: Working With hashcode() and equals() equals和hashCode方法 equals(Object obj): 由Object类提供，用来判断当前对象和obj是否相等。JDK中默认实现方式是基于内存地址：只有两个对象的内存地址相等，那么它们才相等 hashCode(): 该方法由Obje">
-<meta name="keywords" content="hashCode">
+  <meta name="description" content="面朝大海,春暖花开  生活   书名 作者 开始日期 结束日期     人性的弱点 [美]戴尔·卡耐基 2017-01-01 ~      文章历史：2017-01-01 创建">
+<meta name="keywords" content="ebook">
 <meta property="og:type" content="article">
-<meta property="og:title" content="java中重写equals一定要重写hashCode方法">
-<meta property="og:url" content="https://mraye.github.io/2018-05-26-java-equals-hashcode.html">
+<meta property="og:title" content="书单">
+<meta property="og:url" content="https://mraye.github.io/2017/01/01-书单.html">
 <meta property="og:site_name" content="Mraye">
-<meta property="og:description" content="java中重写equals一定要重写hashCode方法原作者博客地址: Working With hashcode() and equals() equals和hashCode方法 equals(Object obj): 由Object类提供，用来判断当前对象和obj是否相等。JDK中默认实现方式是基于内存地址：只有两个对象的内存地址相等，那么它们才相等 hashCode(): 该方法由Obje">
+<meta property="og:description" content="面朝大海,春暖花开  生活   书名 作者 开始日期 结束日期     人性的弱点 [美]戴尔·卡耐基 2017-01-01 ~      文章历史：2017-01-01 创建">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-26T14:06:38.009Z">
+<meta property="og:updated_time" content="2018-05-26T10:04:46.186Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="java中重写equals一定要重写hashCode方法">
-<meta name="twitter:description" content="java中重写equals一定要重写hashCode方法原作者博客地址: Working With hashcode() and equals() equals和hashCode方法 equals(Object obj): 由Object类提供，用来判断当前对象和obj是否相等。JDK中默认实现方式是基于内存地址：只有两个对象的内存地址相等，那么它们才相等 hashCode(): 该方法由Obje">
+<meta name="twitter:title" content="书单">
+<meta name="twitter:description" content="面朝大海,春暖花开  生活   书名 作者 开始日期 结束日期     人性的弱点 [美]戴尔·卡耐基 2017-01-01 ~      文章历史：2017-01-01 创建">
   
     <link rel="alternative" href="/atom.xml" title="Mraye" type="application/atom+xml">
   
@@ -143,72 +143,51 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-java-equals-hashcode" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-书单" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      java中重写equals一定要重写hashCode方法
+      书单
     </h1>
   
 
         
-        <a href="/2018-05-26-java-equals-hashcode.html" class="archive-article-date">
-  	<time datetime="2018-05-26T14:00:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-26</time>
+        <a href="/2017/01/01-书单.html" class="archive-article-date">
+  	<time datetime="2017-01-01T08:34:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-01-01</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="java中重写equals一定要重写hashCode方法"><a href="#java中重写equals一定要重写hashCode方法" class="headerlink" title="java中重写equals一定要重写hashCode方法"></a>java中重写equals一定要重写hashCode方法</h3><p>原作者博客地址: <a href="https://dzone.com/articles/working-with-hashcode-and-equals-in-java" target="_blank" rel="noopener">Working With hashcode() and equals()</a></p>
-<h4 id="equals和hashCode方法"><a href="#equals和hashCode方法" class="headerlink" title="equals和hashCode方法"></a>equals和hashCode方法</h4><ul>
-<li>equals(Object obj): 由Object类提供，用来判断当前对象和obj是否相等。JDK中默认实现方式是基于内存地址：只有两个对象的内存地址相等，那么它们才相等</li>
-<li>hashCode(): 该方法由Object类提供，返回一个整型数值代表了对象在内存的地址，对于每一个对象，hashCode()方法随机返回一个唯一的整型的数值</li>
-</ul>
-<a id="more"></a>
-<h4 id="使用规则"><a href="#使用规则" class="headerlink" title="使用规则"></a>使用规则</h4><ul>
-<li><strong>如果x.equals(y)==true,那么x.hashCode()==y.hashCode()也必须返回true</strong></li>
-</ul>
-<p>也就是说，如果重写了类中的equals方法，那么必须重写hashCode方法</p>
-<p>实体类<code>Ball.java</code>:</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Ball</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">int</span> id;</span><br><span class="line">    <span class="keyword">private</span> String color;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Ball</span><span class="params">(<span class="keyword">int</span> id, String color)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.id = id;</span><br><span class="line">        <span class="keyword">this</span>.color = color;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getId</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setId</span><span class="params">(<span class="keyword">int</span> id)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.id = id;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getColor</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> color;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setColor</span><span class="params">(String color)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.color = color;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="情景1-直接使用Object默认实现的equals和hashCode方法"><a href="#情景1-直接使用Object默认实现的equals和hashCode方法" class="headerlink" title="情景1: 直接使用Object默认实现的equals和hashCode方法"></a>情景1: 直接使用Object默认实现的equals和hashCode方法</h5><p>测试:  </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">commonEquals</span><span class="params">()</span></span>&#123;</span><br><span class="line">    Ball ball1 = <span class="keyword">new</span> Ball(<span class="number">1</span>, <span class="string">"red"</span>);</span><br><span class="line">    Ball  ball2 = <span class="keyword">new</span> Ball(<span class="number">1</span>, <span class="string">"red"</span>);</span><br><span class="line">    System.out.println(<span class="string">"ball1 hashcode: "</span>+ ball1.hashCode());</span><br><span class="line">    System.out.println(<span class="string">"ball2 hashcode: "</span>+ ball2.hashCode());</span><br><span class="line">    System.out.println(<span class="string">"ball1.equals(ball2): "</span>+ ball1.equals(ball2));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>结果:  </p>
-<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ball1 hashcode: 26947503</span><br><span class="line">ball2 hashcode: 22527820</span><br><span class="line">ball1.equals(ball2): false</span><br></pre></td></tr></table></figure>
-<p><strong>很明显，不同的对象，hashcode不相等，ball1和ball2自然不相等</strong></p>
-<h5 id="情景2-重写equals方法，但不重写hashCode方法"><a href="#情景2-重写equals方法，但不重写hashCode方法" class="headerlink" title="情景2: 重写equals方法，但不重写hashCode方法"></a>情景2: 重写equals方法，但不重写hashCode方法</h5><p>重写equals方法:  </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">equals</span><span class="params">(Object obj)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span> == obj)</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">    <span class="keyword">if</span> (obj == <span class="keyword">null</span> || getClass() != obj.getClass())</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">    Ball that = (Ball)obj;</span><br><span class="line">    <span class="keyword">return</span> id==that.getId();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>结果:  </p>
-<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ball1 hashcode: 30430942</span><br><span class="line">ball2 hashcode: 16191201</span><br><span class="line">ball1.equals(ball2): true</span><br></pre></td></tr></table></figure>
-<p>在equals方法中，我们使用id作为两个对象相等的条件</p>
-<p><em>如果在ArrayList中使用只重写equals之后的Ball</em></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">equalsWithArrayList</span><span class="params">()</span></span>&#123;</span><br><span class="line">    ArrayList&lt;Ball&gt; arrayList = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">    Ball ball1 = <span class="keyword">new</span> Ball(<span class="number">1</span>, <span class="string">"red"</span>);</span><br><span class="line">    Ball  ball2 = <span class="keyword">new</span> Ball(<span class="number">1</span>, <span class="string">"red"</span>);</span><br><span class="line">    arrayList.add(ball1);</span><br><span class="line">    arrayList.add(ball2);</span><br><span class="line">    System.out.println(<span class="string">"arrayList size: "</span>+ arrayList.size());</span><br><span class="line">    System.out.println(<span class="string">"arrayList contains Ball: "</span>+ arrayList.contains(<span class="keyword">new</span> Ball(<span class="number">1</span>,<span class="string">"red"</span>)));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>好像并没有发现什么， ArrayList中本来就允许重复元素</p>
-<p><em>如果在HashMap中使用只重写之后的Ball</em></p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">equalsWithHashMap</span><span class="params">()</span></span>&#123;</span><br><span class="line">    HashMap&lt;Ball, Integer&gt; map = <span class="keyword">new</span> HashMap&lt;&gt;();</span><br><span class="line">    Ball ball1 = <span class="keyword">new</span> Ball(<span class="number">1</span>, <span class="string">"red"</span>);</span><br><span class="line">    Ball  ball2 = <span class="keyword">new</span> Ball(<span class="number">1</span>, <span class="string">"red"</span>);</span><br><span class="line">    map.put(ball1, <span class="number">1</span>);</span><br><span class="line">    map.put(ball2,<span class="number">1</span>);</span><br><span class="line">    System.out.println(<span class="string">"map size: "</span>+ map.size());</span><br><span class="line">    System.out.println(<span class="string">"map contains Ball: "</span>+ map.get(<span class="keyword">new</span> Ball(<span class="number">1</span>,<span class="string">"red"</span>)));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>结果:  </p>
-<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">map size: 2</span><br><span class="line">map contains Ball: null</span><br></pre></td></tr></table></figure>
-<p>讲道理，map的size应该是1，而且<code>map.get(new Ball(1, &quot;red&quot;))</code>应该返回1，什么情况？找到HashMap的put源码:  </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> V <span class="title">put</span><span class="params">(K key, V value)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (table == EMPTY_TABLE) &#123;</span><br><span class="line">        inflateTable(threshold);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (key == <span class="keyword">null</span>)</span><br><span class="line">        <span class="keyword">return</span> putForNullKey(value);</span><br><span class="line">    <span class="keyword">int</span> hash = hash(key);</span><br><span class="line">    <span class="keyword">int</span> i = indexFor(hash, table.length);</span><br><span class="line">    <span class="keyword">for</span> (Entry&lt;K,V&gt; e = table[i]; e != <span class="keyword">null</span>; e = e.next) &#123;</span><br><span class="line">        Object k;</span><br><span class="line">        <span class="keyword">if</span> (e.hash == hash &amp;&amp; ((k = e.key) == key || key.equals(k))) &#123;</span><br><span class="line">            V oldValue = e.value;</span><br><span class="line">            e.value = value;</span><br><span class="line">            e.recordAccess(<span class="keyword">this</span>);</span><br><span class="line">            <span class="keyword">return</span> oldValue;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    modCount++;</span><br><span class="line">    addEntry(hash, key, value, i);</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>好吧，HashMap的put操作时，先是比较hashCode值是否相等，然后比较equals方法，如果hashCode不相等，则认为是addEntry操作。实际上，Ball没有重写hashCode方法,第一new的操作，都会在内存中分配不同的地址，所以map.size=2。</p>
-<p>再看，<code>map.get()</code>源码方法：  </p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//HashMap.get()源码</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> V <span class="title">get</span><span class="params">(Object key)</span> </span>&#123;</span><br><span class="line">   <span class="keyword">if</span> (key == <span class="keyword">null</span>)</span><br><span class="line">       <span class="keyword">return</span> getForNullKey();</span><br><span class="line">   Entry&lt;K,V&gt; entry = getEntry(key);</span><br><span class="line"></span><br><span class="line">   <span class="keyword">return</span> <span class="keyword">null</span> == entry ? <span class="keyword">null</span> : entry.getValue();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">final</span> Entry&lt;K,V&gt; <span class="title">getEntry</span><span class="params">(Object key)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (size == <span class="number">0</span>) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">int</span> hash = (key == <span class="keyword">null</span>) ? <span class="number">0</span> : hash(key);</span><br><span class="line">  <span class="keyword">for</span> (Entry&lt;K,V&gt; e = table[indexFor(hash, table.length)];</span><br><span class="line">       e != <span class="keyword">null</span>;</span><br><span class="line">       e = e.next) &#123;</span><br><span class="line">      Object k;</span><br><span class="line">      <span class="keyword">if</span> (e.hash == hash &amp;&amp;</span><br><span class="line">          ((k = e.key) == key || (key != <span class="keyword">null</span> &amp;&amp; key.equals(k))))</span><br><span class="line">          <span class="keyword">return</span> e;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>可以看到，取值的时候先计算对象的hashCode值，<code>map.get(new Ball(1,&quot;red&quot;))</code>,匿名new Ball(1,”red”),之前没有重写hashCode方法，又会产生新的hashCode，所以取出的是null</p>
-<h4 id="重写hashCode方法"><a href="#重写hashCode方法" class="headerlink" title="重写hashCode方法"></a>重写hashCode方法</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Override</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">hashCode</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> id;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>再次运行<code>equalsWithHashMap</code>测试用例,结果:  </p>
-<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">map size: 1</span><br><span class="line">map contains Ball: 1</span><br></pre></td></tr></table></figure>
-<p>可以看到，这次map的size为1，表明加入的ball1和ball2为同一实例</p>
-<p><em>同样也适用于HashSet,HashTable,或者其他以hashCode机制作为存储的数据结构</em></p>
-<p><strong>结论:在重写了equals方法后，强制要求重写hashCode方法</strong></p>
-<ul>
-<li>如果两个对象相等，那么他们必须有相同的hashCode</li>
-<li>如果两个对象有相同的hashCode,并不意味着他们相等</li>
-<li>单独重写equals方法会让业务中使用哈希数据结构的数据失效，如HashMap,HashSet,HashTable…</li>
-</ul>
+        <blockquote>
+<p>面朝大海,春暖花开</p>
+</blockquote>
+<h2 id="生活"><a href="#生活" class="headerlink" title="生活"></a>生活</h2><table>
+<thead>
+<tr>
+<th style="text-align:left">书名</th>
+<th style="text-align:left">作者</th>
+<th style="text-align:left">开始日期</th>
+<th style="text-align:left">结束日期</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><a href="">人性的弱点</a></td>
+<td style="text-align:left">[美]戴尔·卡耐基</td>
+<td style="text-align:left">2017-01-01</td>
+<td style="text-align:left">~</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<blockquote>
+<p><strong>文章历史：</strong><br><code>2017-01-01</code> 创建</p>
+</blockquote>
 
       
 
@@ -222,7 +201,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">hashCode</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">ebook</a>
         		</li>
       		
 		</ul>
@@ -234,7 +213,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/java//" class="article-tag-list-link color5">java</a>
+        			<a href="/categories/book//" class="article-tag-list-link color5">book</a>
         		</li>
       		
 		</ul>
@@ -289,7 +268,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://mraye.github.io/2018-05-26-java-equals-hashcode.html" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://mraye.github.io/2017/01/01-书单.html" alt="微信分享二维码">
     </div>
 </div>
 
@@ -303,18 +282,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018-05-26-aba-problem.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/05/26-git配置多个账户.html" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          CAS(Compare And Swap)导致的ABA问题
+          git配置多个账户
         
       </div>
     </a>
   
   
-    <a href="/2018-05-26-try-catch-finally.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">trycatchfinally的一些理解</div>
+    <a href="/2016/12/31-hexo-yilia.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">初识hexo及搭建Yilia主题博客</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -436,15 +415,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">yilia</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">

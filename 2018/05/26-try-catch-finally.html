@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://mraye.github.io">
-  <title>git忽略提交文件 | Mraye</title>
+  <title>trycatchfinally的一些理解 | Mraye</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="git忽略不想加入版本控制管理的文件创建.ignore文件，与.git/文件夹同一级，即在项目的根目录:   1234.git/  ...  ....ignore 在.ignore文件中输入要过滤的文件和文件夹:   123_post/java*.md.gitignore    #忽略.gitignore文件本身">
-<meta name="keywords" content="git">
+  <meta name="description" content="trycatchfinally的一些理解情景1:try-finally-with-return测试用例： 12345678910111213141516public int tfWithReturnTest()&amp;#123;   try&amp;#123;       System.out.println(&quot;enter try block...&quot;);       return 1;   &amp;#125;fina">
+<meta name="keywords" content="try">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git忽略提交文件">
-<meta property="og:url" content="https://mraye.github.io/2018-05-27-git-ignore-file.html">
+<meta property="og:title" content="trycatchfinally的一些理解">
+<meta property="og:url" content="https://mraye.github.io/2018/05/26-try-catch-finally.html">
 <meta property="og:site_name" content="Mraye">
-<meta property="og:description" content="git忽略不想加入版本控制管理的文件创建.ignore文件，与.git/文件夹同一级，即在项目的根目录:   1234.git/  ...  ....ignore 在.ignore文件中输入要过滤的文件和文件夹:   123_post/java*.md.gitignore    #忽略.gitignore文件本身">
+<meta property="og:description" content="trycatchfinally的一些理解情景1:try-finally-with-return测试用例： 12345678910111213141516public int tfWithReturnTest()&amp;#123;   try&amp;#123;       System.out.println(&quot;enter try block...&quot;);       return 1;   &amp;#125;fina">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-05-27T03:45:15.103Z">
+<meta property="og:updated_time" content="2018-05-26T13:57:33.401Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="git忽略提交文件">
-<meta name="twitter:description" content="git忽略不想加入版本控制管理的文件创建.ignore文件，与.git/文件夹同一级，即在项目的根目录:   1234.git/  ...  ....ignore 在.ignore文件中输入要过滤的文件和文件夹:   123_post/java*.md.gitignore    #忽略.gitignore文件本身">
+<meta name="twitter:title" content="trycatchfinally的一些理解">
+<meta name="twitter:description" content="trycatchfinally的一些理解情景1:try-finally-with-return测试用例： 12345678910111213141516public int tfWithReturnTest()&amp;#123;   try&amp;#123;       System.out.println(&quot;enter try block...&quot;);       return 1;   &amp;#125;fina">
   
     <link rel="alternative" href="/atom.xml" title="Mraye" type="application/atom+xml">
   
@@ -143,34 +143,56 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-git-ignore-file" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-try-catch-finally" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      git忽略提交文件
+      trycatchfinally的一些理解
     </h1>
   
 
         
-        <a href="/2018-05-27-git-ignore-file.html" class="archive-article-date">
-  	<time datetime="2018-05-27T03:29:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-27</time>
+        <a href="/2018/05/26-try-catch-finally.html" class="archive-article-date">
+  	<time datetime="2018-05-26T13:56:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-26</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="git忽略不想加入版本控制管理的文件"><a href="#git忽略不想加入版本控制管理的文件" class="headerlink" title="git忽略不想加入版本控制管理的文件"></a>git忽略不想加入版本控制管理的文件</h2><p>创建<code>.ignore</code>文件，与<code>.git/文件夹</code>同一级，即在项目的根目录:  </p>
-<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">.git/</span><br><span class="line">  ...</span><br><span class="line">  ...</span><br><span class="line">.ignore</span><br></pre></td></tr></table></figure>
-<p>在<code>.ignore</code>文件中输入要过滤的文件和文件夹:  </p>
-<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">_post/</span><br><span class="line">java*.md</span><br><span class="line">.gitignore    #忽略.gitignore文件本身</span><br></pre></td></tr></table></figure>
+        <h3 id="trycatchfinally的一些理解"><a href="#trycatchfinally的一些理解" class="headerlink" title="trycatchfinally的一些理解"></a>trycatchfinally的一些理解</h3><h4 id="情景1-try-finally-with-return"><a href="#情景1-try-finally-with-return" class="headerlink" title="情景1:try-finally-with-return"></a>情景1:try-finally-with-return</h4><p>测试用例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">tfWithReturnTest</span><span class="params">()</span></span>&#123;</span><br><span class="line">   <span class="keyword">try</span>&#123;</span><br><span class="line">       System.out.println(<span class="string">"enter try block..."</span>);</span><br><span class="line">       <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">   &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">       System.out.println(<span class="string">"enter finally block..."</span>);</span><br><span class="line"><span class="comment">//            return 2;</span></span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//junit test case</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">tcfTest</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> rs  = tfWithReturnTest();</span><br><span class="line">    System.out.println(<span class="string">"result: "</span>+ rs);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<h2 id="git忽略已经提交过的文件"><a href="#git忽略已经提交过的文件" class="headerlink" title="git忽略已经提交过的文件"></a>git忽略已经提交过的文件</h2><p>有些时候会因为不小心或者疏忽而导致将本不需要加入版本控制的文件加入到了版本控制中，这时候修改<code>.ignore</code>文件就没有效果了</p>
-<p><strong>解决方案: 先删除本地缓存，然后在<code>ignore</code>文件中填入要忽略的文件，最后再提交</strong></p>
-<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git rm -r --cached xxx   //xxx表示不再想版本控制的文件</span><br><span class="line"><span class="meta">#</span> 然后在.gitignore 文件中加入该忽略的文件</span><br><span class="line">git add .</span><br><span class="line">git commit -m 'update .gitignore'</span><br></pre></td></tr></table></figure>
+<p>结果:</p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">enter try block...</span><br><span class="line">enter finally block...</span><br><span class="line">result: 1</span><br></pre></td></tr></table></figure>
+<p>打开finally代码块中的return语句,再次执行testCase:  </p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">enter try block...</span><br><span class="line">enter finally block...</span><br><span class="line">result: 2</span><br></pre></td></tr></table></figure>
+<p><strong>可以发现，无论有没有return,程序都会执行finally块中的代码，如果finally中没有return,程序执行完try中代码便把控制权转交给finally,处理完finally中扩逻辑之后又把控制权转交给try中的return返回最后的结果;如果finally中存在return,程序执行完try中代码便把控制权转交给finally,处理完finally逻辑之后就直接返回结果，不再走try中的return</strong></p>
+<h4 id="情景2-try-finally-exception-with-return"><a href="#情景2-try-finally-exception-with-return" class="headerlink" title="情景2:try-finally-exception-with-return"></a>情景2:try-finally-exception-with-return</h4><p>测试用例:<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">tfExceptionWithReturnTest</span><span class="params">()</span></span>&#123;</span><br><span class="line">   <span class="keyword">try</span>&#123;</span><br><span class="line">       System.out.println(<span class="string">"enter try block..."</span>);</span><br><span class="line">       <span class="keyword">if</span> (<span class="number">1</span>==<span class="number">1</span>) &#123;</span><br><span class="line">           <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"IllegalArgumentException in try block..."</span>);</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">   &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">       System.out.println(<span class="string">"enter finally block..."</span>);</span><br><span class="line">       <span class="comment">// return 2;</span></span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//junit test case</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">tcfTest</span><span class="params">()</span></span>&#123;</span><br><span class="line">   <span class="keyword">int</span> rs = tfExceptionWithReturnTest();</span><br><span class="line">   System.out.println(<span class="string">"result: "</span>+ rs);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>结果:  </p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">enter try block...</span><br><span class="line">enter finally block...</span><br><span class="line">java.lang.IllegalArgumentException: IllegalArgumentException in try block...</span><br></pre></td></tr></table></figure>
+<p>打开finally代码块中的return语句,再次执行结果:  </p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">enter try block...</span><br><span class="line">enter finally block...</span><br><span class="line">result: 2</span><br></pre></td></tr></table></figure>
+<p><strong>可以发现，无论有没有return,程序都会执行finally块中的代码，如果finally中没有return,程序执行完try中代码将要抛出异常时，便把控制权转交给finally,处理完finally中扩逻辑之后又把控制权转交给try，让try中执行<code>throw exception</code>的操作;如果finally中存在return,程序执行完try中代码将要抛出异常时，便把控制权转交给finally,处理完finally逻辑之后就直接返回结果，不再让try中执行<code>throw exception</code>的操作</strong></p>
+<h4 id="情景3-try-catch-finally-exception-with-return"><a href="#情景3-try-catch-finally-exception-with-return" class="headerlink" title="情景3:try-catch-finally-exception-with-return"></a>情景3:try-catch-finally-exception-with-return</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">tcfWithReturnTest</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">try</span>&#123;</span><br><span class="line">        System.out.println(<span class="string">"enter try block..."</span>);</span><br><span class="line"><span class="comment">//            if (1==1) &#123;</span></span><br><span class="line"><span class="comment">//                throw new IllegalArgumentException("IllegalArgumentException in try block...");</span></span><br><span class="line"><span class="comment">//            &#125;</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125;<span class="keyword">catch</span> (Throwable t)&#123;</span><br><span class="line">        System.out.println(<span class="string">"enter catch block..."</span>);</span><br><span class="line"><span class="comment">//            throw new  RuntimeException("throw runtimeException in catch block...");</span></span><br><span class="line">        <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">    &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">"enter finally block..."</span>);</span><br><span class="line"><span class="comment">//            return 3;</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//junit test case</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">tcfTest</span><span class="params">()</span></span>&#123;</span><br><span class="line"><span class="comment">//        int rs  = tfWithReturnTest();</span></span><br><span class="line"><span class="comment">//        int rs = tfExceptionWithReturnTest();</span></span><br><span class="line">    <span class="keyword">int</span> rs = tcfWithReturnTest();</span><br><span class="line">    System.out.println(<span class="string">"result: "</span>+ rs);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>1.正常运行结果:  </p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">enter try block...</span><br><span class="line">enter finally block...</span><br><span class="line">result: 1</span><br></pre></td></tr></table></figure>
+<p>2.打开finally代码块中的return语句：  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">tcfWithReturnTest</span><span class="params">()</span></span>&#123;</span><br><span class="line">       <span class="keyword">try</span>&#123;</span><br><span class="line">           System.out.println(<span class="string">"enter try block..."</span>);</span><br><span class="line"><span class="comment">//            if (1==1) &#123;</span></span><br><span class="line"><span class="comment">//                throw new IllegalArgumentException("IllegalArgumentException in try block...");</span></span><br><span class="line"><span class="comment">//            &#125;</span></span><br><span class="line">           <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">       &#125;<span class="keyword">catch</span> (Throwable t)&#123;</span><br><span class="line">           System.out.println(<span class="string">"enter catch block..."</span>);</span><br><span class="line"><span class="comment">//            throw new  RuntimeException("throw runtimeException in catch block...");</span></span><br><span class="line">           <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">       &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">           System.out.println(<span class="string">"enter finally block..."</span>);</span><br><span class="line">           <span class="keyword">return</span> <span class="number">3</span>;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<p>结果:<br><figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">enter try block...</span><br><span class="line">enter finally block...</span><br><span class="line">result: 3                   //直接在finally块中返回，而不是将控制权交给try,让try返回结果</span><br></pre></td></tr></table></figure></p>
+<p>3.打开try中的抛出异常代码:  </p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">tcfWithReturnTest</span><span class="params">()</span></span>&#123;</span><br><span class="line">   <span class="keyword">try</span>&#123;</span><br><span class="line">       System.out.println(<span class="string">"enter try block..."</span>);</span><br><span class="line">       <span class="keyword">if</span> (<span class="number">1</span>==<span class="number">1</span>) &#123;</span><br><span class="line">           <span class="keyword">throw</span> <span class="keyword">new</span> IllegalArgumentException(<span class="string">"IllegalArgumentException in try block..."</span>);</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">   &#125;<span class="keyword">catch</span> (Throwable t)&#123;</span><br><span class="line">       System.out.println(<span class="string">"enter catch block..."</span>);</span><br><span class="line"><span class="comment">//            throw new  RuntimeException("throw runtimeException in catch block...");</span></span><br><span class="line">       <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">   &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">       System.out.println(<span class="string">"enter finally block..."</span>);</span><br><span class="line"><span class="comment">//            return 3;</span></span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>结果:  </p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">enter try block...</span><br><span class="line">enter catch block...</span><br><span class="line">enter finally block...</span><br><span class="line">result: 2                   //返回的是catch中的值</span><br></pre></td></tr></table></figure>
+<p><strong>可以看到，finally代码块无论如何都会被执行，在try中抛出异常之后，catch代码块中捕获异常，处理catch中的逻辑之后在抛出异常之前(或return之前)，将控制权交给finally块中，但finally中没有retun关键字，就又将控制权交给catch,由catch抛出异常(或直接return返回值)</strong></p>
+<p>综上所述:</p>
+<ul>
+<li>finally在try-catch-finally语句中一定会被执行</li>
+<li>如果finally中没有return关键字，程序会在执行finally代码块中的逻辑之后将控制权交给try或者是catch代码块;如果在try中抛出异常，先执行catch中逻辑,如果catch中return或者是throw Exception操作时，先将控制权交给finally,在finally中处理逻辑之后，将控制权交给catch,由catch执行throw Exception和return的操作</li>
+</ul>
 
       
 
@@ -184,7 +206,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">try</a>
         		</li>
       		
 		</ul>
@@ -196,7 +218,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/git//" class="article-tag-list-link color4">git</a>
+        			<a href="/categories/java//" class="article-tag-list-link color5">java</a>
         		</li>
       		
 		</ul>
@@ -251,7 +273,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://mraye.github.io/2018-05-27-git-ignore-file.html" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://mraye.github.io/2018/05/26-try-catch-finally.html" alt="微信分享二维码">
     </div>
 </div>
 
@@ -265,9 +287,18 @@
   
 <nav id="article-nav">
   
+    <a href="/2018/05/26-java-equals-hashcode.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          java中重写equals一定要重写hashCode方法
+        
+      </div>
+    </a>
   
-    <a href="/2018-05-26-threadlocal-cognize.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">ThreadLocal关键字</div>
+  
+    <a href="/2018/05/26-inputstream-no-reuse.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">InputStream不能重用问题</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -389,15 +420,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">yilia</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
