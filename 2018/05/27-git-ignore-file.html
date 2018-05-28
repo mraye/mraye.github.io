@@ -170,7 +170,7 @@
 <a id="more"></a>
 <h2 id="git忽略已经提交过的文件"><a href="#git忽略已经提交过的文件" class="headerlink" title="git忽略已经提交过的文件"></a>git忽略已经提交过的文件</h2><p>有些时候会因为不小心或者疏忽而导致将本不需要加入版本控制的文件加入到了版本控制中，这时候修改<code>.ignore</code>文件就没有效果了</p>
 <p><strong>解决方案: 先删除本地缓存，然后在<code>ignore</code>文件中填入要忽略的文件，最后再提交</strong></p>
-<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git rm -r --cached xxx   //xxx表示不再想版本控制的文件</span><br><span class="line"><span class="meta">#</span><span class="bash"> 然后在.gitignore 文件中加入该忽略的文件</span></span><br><span class="line">git add .</span><br><span class="line">git commit -m 'update .gitignore'</span><br></pre></td></tr></table></figure>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git rm -r --cached xxx   //xxx表示不再想版本控制的文件</span><br><span class="line"><span class="meta">#</span> 然后在.gitignore 文件中加入该忽略的文件</span><br><span class="line">git add .</span><br><span class="line">git commit -m 'update .gitignore'</span><br></pre></td></tr></table></figure>
 
       
 
@@ -264,6 +264,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2018/05/28-row-to-column-secd.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          行列转换(二)
+        
+      </div>
+    </a>
   
   
     <a href="/2018/05/26-threadlocal-cognize.html" id="article-nav-older" class="article-nav-link-wrap">
@@ -389,19 +398,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">inputstream</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">yilia</a>
               </li>
              
               <li class="article-tag-list-item">

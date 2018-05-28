@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://mraye.github.io">
-  <title>Archives: 2016 | Mraye</title>
+  <title>行列转换(二) | Mraye</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="面朝大海 春暖花开">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Mraye">
-<meta property="og:url" content="https://mraye.github.io/archives/2016/index.html">
+  <meta name="description" content="情景一1.有限列类型: 12345678910111213141516171819+----+----------+-------+--------+| id | fruit_id | color | weight |+----+----------+-------+--------+|  1 |        1 | 红    |     23 ||  2 |        1 | 黑    |">
+<meta name="keywords" content="sql">
+<meta property="og:type" content="article">
+<meta property="og:title" content="行列转换(二)">
+<meta property="og:url" content="https://mraye.github.io/2018/05/28-row-to-column-secd.html">
 <meta property="og:site_name" content="Mraye">
-<meta property="og:description" content="面朝大海 春暖花开">
+<meta property="og:description" content="情景一1.有限列类型: 12345678910111213141516171819+----+----------+-------+--------+| id | fruit_id | color | weight |+----+----------+-------+--------+|  1 |        1 | 红    |     23 ||  2 |        1 | 黑    |">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-05-28T14:05:36.929Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mraye">
-<meta name="twitter:description" content="面朝大海 春暖花开">
+<meta name="twitter:title" content="行列转换(二)">
+<meta name="twitter:description" content="情景一1.有限列类型: 12345678910111213141516171819+----+----------+-------+--------+| id | fruit_id | color | weight |+----+----------+-------+--------+|  1 |        1 | 红    |     23 ||  2 |        1 | 黑    |">
   
     <link rel="alternative" href="/atom.xml" title="Mraye" type="application/atom+xml">
   
@@ -141,64 +143,171 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-row-to-column-secd" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/12/31-hexo-yilia.html" class="archive-article-date">
-  	<time datetime="2016-12-31T03:51:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-31</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/31-hexo-yilia.html">初识hexo及搭建Yilia主题博客</a>
+    <h1 class="article-title" itemprop="name">
+      行列转换(二)
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/05/28-row-to-column-secd.html" class="archive-article-date">
+  	<time datetime="2018-05-28T14:03:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-28</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="情景一"><a href="#情景一" class="headerlink" title="情景一"></a>情景一</h4><p>1.有限列类型:</p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">+----+----------+-------+--------+</span><br><span class="line">| id | fruit_id | color | weight |</span><br><span class="line">+----+----------+-------+--------+</span><br><span class="line">|  1 |        1 | 红    |     23 |</span><br><span class="line">|  2 |        1 | 黑    |     54 |</span><br><span class="line">|  3 |        2 | 红    |     12 |</span><br><span class="line">|  4 |        2 | 黑    |     43 |</span><br><span class="line">|  5 |        3 | 黑    |     90 |</span><br><span class="line">+----+----------+-------+--------+</span><br><span class="line">                |</span><br><span class="line">                V</span><br><span class="line"></span><br><span class="line">      +----------+----+----+</span><br><span class="line">      | fruit_id | 红 | 黑 |</span><br><span class="line">      +----------+----+----+</span><br><span class="line">      |        1 | 23 | 54 |</span><br><span class="line">      |        2 | 12 | 43 |</span><br><span class="line">      |        3 |  0 | 90 |</span><br><span class="line">      +----------+----+----+</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p>sql实现:  </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">   fruit_id,</span><br><span class="line">	 <span class="keyword">max</span>(<span class="keyword">case</span> <span class="keyword">WHEN</span> color=<span class="string">'红'</span> <span class="keyword">THEN</span> weight <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span>) <span class="string">'红'</span>,</span><br><span class="line">	 <span class="keyword">max</span>(<span class="keyword">CASE</span> <span class="keyword">WHEN</span> color=<span class="string">'黑'</span> <span class="keyword">THEN</span> weight <span class="keyword">ELSE</span> <span class="number">0</span> <span class="keyword">END</span>) <span class="string">'黑'</span></span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">t_fruit</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> fruit_id</span><br></pre></td></tr></table></figure>
+<p>2.无限列类型，使用动态sql(或者存储过程):  </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">set</span> @<span class="keyword">sql</span>=<span class="string">''</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	@<span class="keyword">sql</span>:= <span class="keyword">concat</span>(</span><br><span class="line">		@<span class="keyword">sql</span>,</span><br><span class="line">		<span class="string">'sum(case color when \''</span>,color, <span class="string">'\' then  weight else 0 end) as \''</span>, color,</span><br><span class="line">		<span class="string">'\','</span></span><br><span class="line">	)</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">(</span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span></span><br><span class="line">	color</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	t_fruit</span><br><span class="line">)temp;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">set</span> @<span class="keyword">sql</span>=<span class="keyword">concat</span>(</span><br><span class="line">	<span class="string">'SELECT fruit_id,'</span>,</span><br><span class="line">	<span class="keyword">LEFT</span>(@<span class="keyword">sql</span>, <span class="keyword">CHAR_LENGTH</span>(@<span class="keyword">sql</span>)<span class="number">-1</span>),</span><br><span class="line">	<span class="comment">-- LEFT(@sql, LENGTH(@sql)-1), 如果含有中文字符就不行...</span></span><br><span class="line">   <span class="string">' from t_fruit group by fruit_id'</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- SELECT @sql;</span></span><br><span class="line"><span class="keyword">PREPARE</span> stmt <span class="keyword">FROM</span> @<span class="keyword">sql</span>;</span><br><span class="line"><span class="keyword">EXECUTE</span> stmt;</span><br></pre></td></tr></table></figure>
+<p><strong>script</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="string">`t_fruit`</span> (</span><br><span class="line">  <span class="string">`id`</span> <span class="built_in">int</span>(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT,</span><br><span class="line">  <span class="string">`fruit_id`</span> <span class="built_in">int</span>(<span class="number">11</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  <span class="string">`color`</span> <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  <span class="string">`weight`</span> <span class="built_in">int</span>(<span class="number">11</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  PRIMARY <span class="keyword">KEY</span> (<span class="string">`id`</span>)</span><br><span class="line">) <span class="keyword">ENGINE</span>=<span class="keyword">InnoDB</span> AUTO_INCREMENT=<span class="number">6</span> <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span>=utf8;</span><br><span class="line"></span><br><span class="line">//插入</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">`dbl`</span>.<span class="string">`t_fruit`</span> (<span class="string">`id`</span>, <span class="string">`fruit_id`</span>, <span class="string">`color`</span>, <span class="string">`weight`</span>)</span><br><span class="line"> <span class="keyword">VALUES</span></span><br><span class="line">(<span class="string">'1'</span>, <span class="string">'1'</span>, <span class="string">'红'</span>, <span class="string">'23'</span>),</span><br><span class="line">(<span class="string">'2'</span>, <span class="string">'1'</span>, <span class="string">'黑'</span>, <span class="string">'54'</span>),</span><br><span class="line">(<span class="string">'3'</span>, <span class="string">'2'</span>, <span class="string">'红'</span>, <span class="string">'12'</span>),</span><br><span class="line">(<span class="string">'4'</span>, <span class="string">'2'</span>, <span class="string">'黑'</span>, <span class="string">'43'</span>),</span><br><span class="line">(<span class="string">'5'</span>, <span class="string">'3'</span>, <span class="string">'黑'</span>, <span class="string">'90'</span>);</span><br></pre></td></tr></table></figure>
+<h4 id="情景二"><a href="#情景二" class="headerlink" title="情景二"></a>情景二</h4><p>列转行:  </p>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">+----+----------+-------------+-----------+</span><br><span class="line">| id | fruit_id | color_black | color_red |</span><br><span class="line">+----+----------+-------------+-----------+</span><br><span class="line">|  1 |        1 | 54          | 23        |</span><br><span class="line">|  2 |        2 | 43          | 12        |</span><br><span class="line">|  3 |        3 | 90          | 0         |</span><br><span class="line">+----+----------+-------------+-----------+</span><br><span class="line">                  |</span><br><span class="line">                  V</span><br><span class="line">    +----------+-------+-----------+</span><br><span class="line">    | fruit_id | color | weight    |</span><br><span class="line">    +----------+-------+-----------+</span><br><span class="line">    |        1 | 红    | 23        |</span><br><span class="line">    |        1 | 黑    | 54        |</span><br><span class="line">    |        2 | 红    | 12        |</span><br><span class="line">    |        2 | 黑    | 43        |</span><br><span class="line">    |        3 | 红    | 0         |</span><br><span class="line">    |        3 | 黑    | 90        |</span><br><span class="line">    +----------+-------+-----------+</span><br></pre></td></tr></table></figure>
+<p>sql实现:  </p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	fruit_id,</span><br><span class="line">	<span class="string">'红'</span> color,</span><br><span class="line">	color_red weight</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	t_color_fruit</span><br><span class="line"><span class="keyword">UNION</span> ALL</span><br><span class="line">	<span class="keyword">SELECT</span></span><br><span class="line">		fruit_id,</span><br><span class="line">		<span class="string">'黑'</span> color,</span><br><span class="line">		color_black weight</span><br><span class="line">	<span class="keyword">FROM</span></span><br><span class="line">		t_color_fruit</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span></span><br><span class="line">	fruit_id,</span><br><span class="line">	color</span><br></pre></td></tr></table></figure>
+<p><strong>script</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="string">`t_color_fruit`</span> (</span><br><span class="line">  <span class="string">`id`</span> <span class="built_in">int</span>(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT,</span><br><span class="line">  <span class="string">`fruit_id`</span> <span class="built_in">int</span>(<span class="number">11</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  <span class="string">`color_black`</span> <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  <span class="string">`color_red`</span> <span class="built_in">varchar</span>(<span class="number">255</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  PRIMARY <span class="keyword">KEY</span> (<span class="string">`id`</span>)</span><br><span class="line">) <span class="keyword">ENGINE</span>=<span class="keyword">InnoDB</span> AUTO_INCREMENT=<span class="number">4</span> <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span>=utf8;</span><br><span class="line"></span><br><span class="line">//插入</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">`dbl`</span>.<span class="string">`t_color_fruit`</span> (<span class="string">`id`</span>, <span class="string">`fruit_id`</span>, <span class="string">`color_black`</span>, <span class="string">`color_red`</span>)</span><br><span class="line"><span class="keyword">VALUES</span></span><br><span class="line">(<span class="string">'1'</span>, <span class="string">'1'</span>, <span class="string">'54'</span>, <span class="string">'23'</span>),</span><br><span class="line">(<span class="string">'2'</span>, <span class="string">'2'</span>, <span class="string">'43'</span>, <span class="string">'12'</span>),</span><br><span class="line">(<span class="string">'3'</span>, <span class="string">'3'</span>, <span class="string">'90'</span>, <span class="string">'0'</span>);</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">yilia</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">sql</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/mysql//" class="article-tag-list-link color1">mysql</a>
+        		</li>
+      		
+		</ul>
+	</div>
 
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://mraye.github.io/2018/05/28-row-to-column-secd.html" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/05/27-git-ignore-file.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">git忽略提交文件</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -221,8 +330,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
