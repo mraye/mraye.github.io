@@ -6,18 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://mraye.github.io">
-  <title>Tag: try | Mraye</title>
+  <title>linux中安装单机版zookeeper集群服务 | Mraye</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="面朝大海 春暖花开">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Mraye">
-<meta property="og:url" content="https://mraye.github.io/tags/try/index.html">
+  <meta name="description" content="创建配置文件首先在zookeeper安装目录下的conf目录下创建3个配置文件zoo1.cfg,zoo2.cfg,zoo2.cfg,这三个配置文件差不多，只是有一点微小的差别，我的目录是/opt/soft/zookeeper-3.4.12/conf   123456789[root@localhost conf]# tree.├── configuration.xsl├── log4j.prope">
+<meta name="keywords" content="cluster">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux中安装单机版zookeeper集群服务">
+<meta property="og:url" content="https://mraye.github.io/2018/07/08-linux-zookeeper-claster-one-host.html">
 <meta property="og:site_name" content="Mraye">
-<meta property="og:description" content="面朝大海 春暖花开">
+<meta property="og:description" content="创建配置文件首先在zookeeper安装目录下的conf目录下创建3个配置文件zoo1.cfg,zoo2.cfg,zoo2.cfg,这三个配置文件差不多，只是有一点微小的差别，我的目录是/opt/soft/zookeeper-3.4.12/conf   123456789[root@localhost conf]# tree.├── configuration.xsl├── log4j.prope">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-07-08T00:49:26.317Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Mraye">
-<meta name="twitter:description" content="面朝大海 春暖花开">
+<meta name="twitter:title" content="linux中安装单机版zookeeper集群服务">
+<meta name="twitter:description" content="创建配置文件首先在zookeeper安装目录下的conf目录下创建3个配置文件zoo1.cfg,zoo2.cfg,zoo2.cfg,这三个配置文件差不多，只是有一点微小的差别，我的目录是/opt/soft/zookeeper-3.4.12/conf   123456789[root@localhost conf]# tree.├── configuration.xsl├── log4j.prope">
   
     <link rel="alternative" href="/atom.xml" title="Mraye" type="application/atom+xml">
   
@@ -141,71 +143,172 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-linux-zookeeper-claster-one-host" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/26-try-catch-finally.html" class="archive-article-date">
-  	<time datetime="2018-05-26T13:56:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-26</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/26-try-catch-finally.html">trycatchfinally的一些理解</a>
+    <h1 class="article-title" itemprop="name">
+      linux中安装单机版zookeeper集群服务
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/07/08-linux-zookeeper-claster-one-host.html" class="archive-article-date">
+  	<time datetime="2018-07-08T00:44:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="创建配置文件"><a href="#创建配置文件" class="headerlink" title="创建配置文件"></a>创建配置文件</h3><p>首先在zookeeper安装目录下的<code>conf</code>目录下创建3个配置文件<code>zoo1.cfg</code>,<code>zoo2.cfg</code>,<code>zoo2.cfg</code>,这三个配置文件差不多，只是有一点微小的差别，我的目录是<code>/opt/soft/zookeeper-3.4.12/conf</code>  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost conf]<span class="comment"># tree</span></span><br><span class="line">.</span><br><span class="line">├── configuration.xsl</span><br><span class="line">├── log4j.properties</span><br><span class="line">├── zoo1.cfg</span><br><span class="line">├── zoo2.cfg</span><br><span class="line">├── zoo3.cfg</span><br><span class="line">├── zookeeper.out</span><br><span class="line">└── zoo_sample.cfg</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
+<p><code>zoo1.cfg</code>配置文件内容:  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">tickTime=2000</span><br><span class="line">initLimit=10</span><br><span class="line">syncLimit=5</span><br><span class="line">dataDir=/tmp/zookeeper/zoo1 <span class="comment">#！！区别</span></span><br><span class="line">clientPort=2181 <span class="comment"># zk客户端连接的端口 #！！区别</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 这里我们配置了3个服务结点</span></span><br><span class="line">server.1=localhost:2666:3666</span><br><span class="line">server.2=localhost:2667:3667</span><br><span class="line">server.3=localhost:2668:3668</span><br></pre></td></tr></table></figure>
+<p><code>zoo2.cfg</code>配置文件内容:  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">tickTime=2000</span><br><span class="line">initLimit=10</span><br><span class="line">syncLimit=5</span><br><span class="line">dataDir=/tmp/zookeeper/zoo2 <span class="comment">#！！区别</span></span><br><span class="line">clientPort=2182 <span class="comment"># zk客户端连接的端口 #！！区别</span></span><br><span class="line"></span><br><span class="line">server.1=localhost:2666:3666</span><br><span class="line">server.2=localhost:2667:3667</span><br><span class="line">server.3=localhost:2668:3668</span><br></pre></td></tr></table></figure>
+<p><code>zoo3.cfg</code>配置文件内容:  </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">tickTime=2000</span><br><span class="line">initLimit=10</span><br><span class="line">syncLimit=5</span><br><span class="line">dataDir=/tmp/zookeeper/zoo3 <span class="comment">#！！区别</span></span><br><span class="line">clientPort=2183 <span class="comment"># zk客户端连接的端口 #！！区别</span></span><br><span class="line"></span><br><span class="line">server.1=localhost:2666:3666</span><br><span class="line">server.2=localhost:2667:3667</span><br><span class="line">server.3=localhost:2668:3668</span><br></pre></td></tr></table></figure>
+<p><strong>三个配置文件最大的不同点就是<code>dataDir</code>属性和<code>clientPort</code>属性</strong></p>
+<h3 id="给每个服务实例设置server-ID"><a href="#给每个服务实例设置server-ID" class="headerlink" title="给每个服务实例设置server ID"></a>给每个服务实例设置server ID</h3><p>必须给每个zookeeper服务结点设置<code>server id</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost conf]<span class="comment"># echo 1 &gt; /tmp/zookeeper/zoo1/myid</span></span><br><span class="line">[root@localhost conf]<span class="comment"># echo 2 &gt; /tmp/zookeeper/zoo2/myid</span></span><br><span class="line">[root@localhost conf]<span class="comment"># echo 3 &gt; /tmp/zookeeper/zoo3/myid</span></span><br></pre></td></tr></table></figure>
+<h3 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost bin]<span class="comment"># ./zkServer.sh start ../conf/zoo1.cfg</span></span><br><span class="line">[root@localhost bin]<span class="comment"># ./zkServer.sh start ../conf/zoo2.cfg</span></span><br><span class="line">[root@localhost bin]<span class="comment"># ./zkServer.sh start ../conf/zoo3.cfg</span></span><br><span class="line">[root@localhost bin]<span class="comment"># jps</span></span><br><span class="line">14273 Jps</span><br><span class="line">14035 QuorumPeerMain</span><br><span class="line">13925 QuorumPeerMain</span><br><span class="line">14159 QuorumPeerMain</span><br></pre></td></tr></table></figure>
+<h3 id="客户端连接"><a href="#客户端连接" class="headerlink" title="客户端连接"></a>客户端连接</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost bin]<span class="comment"># ./zkCli.sh -server localhost:2181,localhost:2182,localhost:2183</span></span><br><span class="line">WATCHER::</span><br><span class="line"></span><br><span class="line">WatchedEvent state:SyncConnected <span class="built_in">type</span>:None path:null</span><br><span class="line">[zk: localhost:2181,localhost:2182,localhost:2183(CONNECTED) 1] ls /</span><br><span class="line">[zookeeper]</span><br><span class="line">[zk: localhost:2181,localhost:2182,localhost:2183(CONNECTED) 2] create /hello world</span><br><span class="line">Created /hello</span><br><span class="line">[zk: localhost:2181,localhost:2182,localhost:2183(CONNECTED) 3] ls /</span><br><span class="line">[hello, zookeeper]</span><br><span class="line">[zk: localhost:2181,localhost:2182,localhost:2183(CONNECTED) 4] get /hello</span><br><span class="line">world</span><br><span class="line">cZxid = 0x200000003</span><br><span class="line">ctime = Sun Jul 08 00:08:42 UTC 2018</span><br><span class="line">mZxid = 0x200000003</span><br><span class="line">mtime = Sun Jul 08 00:08:42 UTC 2018</span><br><span class="line">pZxid = 0x200000003</span><br><span class="line">cversion = 0</span><br><span class="line">dataVersion = 0</span><br><span class="line">aclVersion = 0</span><br><span class="line">ephemeralOwner = 0x0</span><br><span class="line">dataLength = 5</span><br><span class="line">numChildren = 0</span><br><span class="line">[zk: localhost:2181,localhost:2182,localhost:2183(CONNECTED) 5] quit</span><br><span class="line">Quitting...</span><br></pre></td></tr></table></figure>
+<h3 id="停止zookeeper服务"><a href="#停止zookeeper服务" class="headerlink" title="停止zookeeper服务"></a>停止zookeeper服务</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost bin]<span class="comment"># ./zkServer.sh stop ../conf/zoo1.cfg</span></span><br><span class="line">[root@localhost bin]<span class="comment"># ./zkServer.sh stop ../conf/zoo2.cfg</span></span><br><span class="line">[root@localhost bin]<span class="comment"># ./zkServer.sh stop ../conf/zoo3.cfg</span></span><br><span class="line">[root@JARVICENAE-0A0A1881 bin]<span class="comment"># jps</span></span><br><span class="line">14509 Jps</span><br></pre></td></tr></table></figure>
+<p><strong>jps可以查看zookeeper的进程,并且以<code>QuorumPeerMain</code>名称出现</strong></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">try</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">cluster</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="/categories/java//" class="article-tag-list-link color5">java</a>
+        			<a href="/categories/zookeeper//" class="article-tag-list-link color5">zookeeper</a>
         		</li>
       		
 		</ul>
 	</div>
 
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://mraye.github.io/2018/07/08-linux-zookeeper-claster-one-host.html" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/05/30-mybatis-column-pro.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">mybatis中association和collection的column传入多个参数值</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -228,9 +331,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
