@@ -6,22 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://mraye.github.io">
-  <title>git忽略提交文件 | Mraye</title>
+  <title>git忽略提交文件 | mraye</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="git忽略不想加入版本控制管理的文件创建.ignore文件，与.git/文件夹同一级，即在项目的根目录:   1234.git/  ...  ....ignore 在.ignore文件中输入要过滤的文件和文件夹:   123_post/java*.md.gitignore    #忽略.gitignore文件本身">
 <meta name="keywords" content="git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git忽略提交文件">
 <meta property="og:url" content="https://mraye.github.io/2018/05/27-git-ignore-file.html">
-<meta property="og:site_name" content="Mraye">
+<meta property="og:site_name" content="mraye">
 <meta property="og:description" content="git忽略不想加入版本控制管理的文件创建.ignore文件，与.git/文件夹同一级，即在项目的根目录:   1234.git/  ...  ....ignore 在.ignore文件中输入要过滤的文件和文件夹:   123_post/java*.md.gitignore    #忽略.gitignore文件本身">
-<meta property="og:locale" content="zh-CN">
+<meta property="og:locale" content="zh-cn">
 <meta property="og:updated_time" content="2018-05-27T03:45:15.103Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git忽略提交文件">
 <meta name="twitter:description" content="git忽略不想加入版本控制管理的文件创建.ignore文件，与.git/文件夹同一级，即在项目的根目录:   1234.git/  ...  ....ignore 在.ignore文件中输入要过滤的文件和文件夹:   123_post/java*.md.gitignore    #忽略.gitignore文件本身">
   
-    <link rel="alternative" href="/atom.xml" title="Mraye" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="mraye" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.jpg">
@@ -51,7 +51,7 @@
 			<img src="/img/avatar.jpg" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">Mraye</a></h1>
+		  <h1 class="header-author"><a href="/">mraye</a></h1>
 		</hgroup>
 		
 		<p class="header-subtitle">面朝大海 春暖花开</p>
@@ -101,7 +101,7 @@
 				<img src="/img/avatar.jpg" class="js-avatar">
 			</div>
 			<hgroup>
-			  <h1 class="header-author js-header-author">Mraye</h1>
+			  <h1 class="header-author js-header-author">mraye</h1>
 			</hgroup>
 			
 			<p class="header-subtitle"><i class="icon icon-quo-left"></i>面朝大海 春暖花开<i class="icon icon-quo-right"></i></p>
@@ -170,7 +170,7 @@
 <a id="more"></a>
 <h2 id="git忽略已经提交过的文件"><a href="#git忽略已经提交过的文件" class="headerlink" title="git忽略已经提交过的文件"></a>git忽略已经提交过的文件</h2><p>有些时候会因为不小心或者疏忽而导致将本不需要加入版本控制的文件加入到了版本控制中，这时候修改<code>.ignore</code>文件就没有效果了</p>
 <p><strong>解决方案: 先删除本地缓存，然后在<code>ignore</code>文件中填入要忽略的文件，最后再提交</strong></p>
-<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git rm -r --cached xxx   //xxx表示不再想版本控制的文件</span><br><span class="line"><span class="meta">#</span><span class="bash"> 然后在.gitignore 文件中加入该忽略的文件</span></span><br><span class="line">git add .</span><br><span class="line">git commit -m 'update .gitignore'</span><br></pre></td></tr></table></figure>
+<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git rm -r --cached xxx   //xxx表示不再想版本控制的文件</span><br><span class="line"><span class="meta">#</span> 然后在.gitignore 文件中加入该忽略的文件</span><br><span class="line">git add .</span><br><span class="line">git commit -m 'update .gitignore'</span><br></pre></td></tr></table></figure>
 
       
 
@@ -319,7 +319,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2018 Mraye
+    		&copy; 2019 mraye
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
@@ -394,15 +394,47 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">延时任务</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">ABA</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">inputstream</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">hashCode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">association</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">collection</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">sql</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mybatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">pageHelper</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">try</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">ebook</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -418,39 +450,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">inputstream</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">hashCode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mybatis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">cache</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">association</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">collection</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">pageHelper</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">sql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">ebook</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -458,7 +458,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">try</a>
+                <a href="javascript:void(0)" class="js-tag color5">延时任务</a>
               </li>
              
               <li class="article-tag-list-item">
