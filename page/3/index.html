@@ -143,6 +143,276 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-aba-problem" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/26-aba-problem.html">CAS(Compare And Swap)导致的ABA问题</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/26-aba-problem.html" class="archive-article-date">
+  	<time datetime="2018-05-26T14:04:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>问题描述</p>
+<blockquote>
+<p>多线程情况下，每个线程使用CAS操作欲将数据A修改成B，当然我们只希望只有一个线程能够正确的修改数据，并且只修改一次。当并发的时候，其中一个线程已经将A成功的改成了B，但是在线程并发调度过程中尚未被调度，在这个期间，另外一个线程(不在并发中的请求线程)将B又修改成了A，那么原来并发中的线程又可以通过CAS操作将A改成B</p>
+</blockquote>
+<p>测试用例:  </p>
+        
+          <a class="article-more-a" href="/2018/05/26-aba-problem.html#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ABA</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/multi-thread//" class="article-tag-list-link color3">multi-thread</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/05/26-aba-problem.html">阅读全文&#39; >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-java-equals-hashcode" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/26-java-equals-hashcode.html">java中重写equals一定要重写hashCode方法</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/26-java-equals-hashcode.html" class="archive-article-date">
+  	<time datetime="2018-05-26T14:00:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="java中重写equals一定要重写hashCode方法"><a href="#java中重写equals一定要重写hashCode方法" class="headerlink" title="java中重写equals一定要重写hashCode方法"></a>java中重写equals一定要重写hashCode方法</h3><p>原作者博客地址: <a href="https://dzone.com/articles/working-with-hashcode-and-equals-in-java" target="_blank" rel="noopener">Working With hashcode() and equals()</a></p>
+<h4 id="equals和hashCode方法"><a href="#equals和hashCode方法" class="headerlink" title="equals和hashCode方法"></a>equals和hashCode方法</h4><ul>
+<li>equals(Object obj): 由Object类提供，用来判断当前对象和obj是否相等。JDK中默认实现方式是基于内存地址：只有两个对象的内存地址相等，那么它们才相等</li>
+<li>hashCode(): 该方法由Object类提供，返回一个整型数值代表了对象在内存的地址，对于每一个对象，hashCode()方法随机返回一个唯一的整型的数值</li>
+</ul>
+        
+          <a class="article-more-a" href="/2018/05/26-java-equals-hashcode.html#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">hashCode</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/java//" class="article-tag-list-link color5">java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/05/26-java-equals-hashcode.html">阅读全文&#39; >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-try-catch-finally" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/26-try-catch-finally.html">trycatchfinally的一些理解</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/26-try-catch-finally.html" class="archive-article-date">
+  	<time datetime="2018-05-26T13:56:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="trycatchfinally的一些理解"><a href="#trycatchfinally的一些理解" class="headerlink" title="trycatchfinally的一些理解"></a>trycatchfinally的一些理解</h3><h4 id="情景1-try-finally-with-return"><a href="#情景1-try-finally-with-return" class="headerlink" title="情景1:try-finally-with-return"></a>情景1:try-finally-with-return</h4><p>测试用例：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">tfWithReturnTest</span><span class="params">()</span></span>&#123;</span><br><span class="line">   <span class="keyword">try</span>&#123;</span><br><span class="line">       System.out.println(<span class="string">"enter try block..."</span>);</span><br><span class="line">       <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">   &#125;<span class="keyword">finally</span> &#123;</span><br><span class="line">       System.out.println(<span class="string">"enter finally block..."</span>);</span><br><span class="line"><span class="comment">//            return 2;</span></span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//junit test case</span></span><br><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">tcfTest</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> rs  = tfWithReturnTest();</span><br><span class="line">    System.out.println(<span class="string">"result: "</span>+ rs);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2018/05/26-try-catch-finally.html#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">try</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/java//" class="article-tag-list-link color5">java</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/05/26-try-catch-finally.html">阅读全文&#39; >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-inputstream-no-reuse" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -330,270 +600,6 @@
 
 
   
-    <article id="post-pagehelper-onetomany" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/26-pagehelper-onetomany.html">mybatis中使用pageHelper实现一对多分页</a>
-    </h1>
-  
-
-        
-        <a href="/2018/05/26-pagehelper-onetomany.html" class="archive-article-date">
-  	<time datetime="2018-05-26T13:32:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="mybatis中使用pageHelper实现一对多分页"><a href="#mybatis中使用pageHelper实现一对多分页" class="headerlink" title="mybatis中使用pageHelper实现一对多分页"></a>mybatis中使用pageHelper实现一对多分页</h3><p>项目里经常遇到一对多分页的问题，以前认为PageHelper不支持一对多的分页，还一直自己重写分页方法。。。。</p>
-<h4 id="数据库表"><a href="#数据库表" class="headerlink" title="数据库表"></a>数据库表</h4><ul>
-<li>country表</li>
-</ul>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="string">`country`</span> (</span><br><span class="line">  <span class="string">`country_id`</span> <span class="built_in">smallint</span>(<span class="number">5</span>) <span class="keyword">unsigned</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT,</span><br><span class="line">  <span class="string">`country`</span> <span class="built_in">varchar</span>(<span class="number">50</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">  <span class="string">`last_update`</span> <span class="keyword">timestamp</span> <span class="keyword">NOT</span> <span class="literal">NULL</span> <span class="keyword">DEFAULT</span> <span class="keyword">CURRENT_TIMESTAMP</span> <span class="keyword">ON</span> <span class="keyword">UPDATE</span> <span class="keyword">CURRENT_TIMESTAMP</span>,</span><br><span class="line">  PRIMARY <span class="keyword">KEY</span> (<span class="string">`country_id`</span>)</span><br><span class="line">) <span class="keyword">ENGINE</span>=<span class="keyword">InnoDB</span> AUTO_INCREMENT=<span class="number">110</span> <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span>=utf8;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>city表</li>
-</ul>
-        
-          <a class="article-more-a" href="/2018/05/26-pagehelper-onetomany.html#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">mybatis</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">pageHelper</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/mybatis//" class="article-tag-list-link color3">mybatis</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/26-pagehelper-onetomany.html">阅读全文&#39; >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-row-col-transfer-fst" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/26-row-col-transfer-fst.html">mysql行列转换(一)</a>
-    </h1>
-  
-
-        
-        <a href="/2018/05/26-row-col-transfer-fst.html" class="archive-article-date">
-  	<time datetime="2018-05-26T13:25:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="情景一"><a href="#情景一" class="headerlink" title="情景一"></a>情景一</h4><figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">        +----+--------+---------+</span><br><span class="line">        | id | month  | pay_fee |</span><br><span class="line">        +----+--------+---------+</span><br><span class="line">        |  1 | 201801 |      10 |</span><br><span class="line">        |  2 | 201802 |      11 |</span><br><span class="line">        |  3 | 201803 |      54 |</span><br><span class="line">        |  4 | 201804 |      32 |</span><br><span class="line">        +----+--------+---------+  </span><br><span class="line">                    |</span><br><span class="line">                    V</span><br><span class="line">+--------+--------+--------+--------+</span><br><span class="line">| 201801 | 201802 | 201803 | 201804 |</span><br><span class="line">+--------+--------+--------+--------+</span><br><span class="line">|     10 |     11 |     54 |     32 |</span><br><span class="line">+--------+--------+--------+--------+</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2018/05/26-row-col-transfer-fst.html#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">sql</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/mysql//" class="article-tag-list-link color1">mysql</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/26-row-col-transfer-fst.html">阅读全文&#39; >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-git配置多个账户" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/26-git配置多个账户.html">git配置多个账户</a>
-    </h1>
-  
-
-        
-        <a href="/2018/05/26-git配置多个账户.html" class="archive-article-date">
-  	<time datetime="2018-05-26T08:49:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-26</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="创建帐户"><a href="#创建帐户" class="headerlink" title="创建帐户"></a>创建帐户</h3><p>打开git-bash,查看原有帐户:  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ git config --list</span><br><span class="line"><span class="comment"># omit...</span></span><br><span class="line">filter.lfs.process=git-lfs filter-process</span><br><span class="line">credential.helper=manager</span><br><span class="line">user.name=a***w</span><br><span class="line">user.email=a***w@email.com</span><br></pre></td></tr></table></figure>
-<p>进入<code>~/.ssh</code>目录,可以看到原有的帐户默认使用<code>id_rsa</code>:  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ls</span><br><span class="line">id_rsa  id_rsa.pub  known_hosts</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2018/05/26-git配置多个账户.html#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/26-git配置多个账户.html">阅读全文&#39; >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
@@ -683,7 +689,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ABA</a>
+                <a href="javascript:void(0)" class="js-tag color4">sql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -691,11 +697,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">hashCode</a>
+                <a href="javascript:void(0)" class="js-tag color2">inputstream</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">inputstream</a>
+                <a href="javascript:void(0)" class="js-tag color4">ABA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">hashCode</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -707,27 +717,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mybatis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">pageHelper</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">sql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">try</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">ebook</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">cluster</a>
+                <a href="javascript:void(0)" class="js-tag color3">索引</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">try</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -736,10 +734,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">yilia</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">cache</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -752,6 +746,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">并发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">cluster</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mybatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">pageHelper</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">cache</a>
               </li>
             
             <div class="clearfix"></div>

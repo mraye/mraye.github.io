@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="mraye">
 <meta property="og:description" content="最近碰到一个sql问题：要求连续三天及以上，并且每天人流量均不少于100 12345678910111213mysql&amp;gt; select * from t_people_stat;+----+------------+--------+| id | start_date | people |+----+------------+--------+|  1 | 2019-04-03 |    1">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2019-04-08T12:36:11.230Z">
+<meta property="og:updated_time" content="2019-05-02T05:26:56.938Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="sql连续问题">
 <meta name="twitter:description" content="最近碰到一个sql问题：要求连续三天及以上，并且每天人流量均不少于100 12345678910111213mysql&amp;gt; select * from t_people_stat;+----+------------+--------+| id | start_date | people |+----+------------+--------+|  1 | 2019-04-03 |    1">
@@ -165,6 +165,7 @@
       
         <p>最近碰到一个sql问题：要求连续三天及以上，并且每天人流量均不少于100</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select * from t_people_stat;</span><br><span class="line">+<span class="comment">----+------------+--------+</span></span><br><span class="line">| id | start_date | people |</span><br><span class="line">+<span class="comment">----+------------+--------+</span></span><br><span class="line">|  1 | 2019-04-03 |    100 |</span><br><span class="line">|  3 | 2019-04-04 |     90 |</span><br><span class="line">|  4 | 2019-04-05 |     80 |</span><br><span class="line">|  5 | 2019-04-06 |    105 |</span><br><span class="line">|  6 | 2019-04-07 |    109 |</span><br><span class="line">|  7 | 2019-04-09 |    100 |</span><br><span class="line">|  8 | 2019-04-10 |     70 |</span><br><span class="line">+<span class="comment">----+------------+--------+</span></span><br><span class="line">7 rows in <span class="keyword">set</span> (<span class="number">0.13</span> sec)</span><br></pre></td></tr></table></figure>
+<a id="more"></a>
 <h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><p>建表:  </p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="string">`t_people_stat`</span> (</span><br><span class="line">  <span class="string">`id`</span> <span class="built_in">int</span>(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT,</span><br><span class="line">  <span class="string">`start_date`</span> <span class="built_in">date</span> <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  <span class="string">`people`</span> <span class="built_in">int</span>(<span class="number">255</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  PRIMARY <span class="keyword">KEY</span> (<span class="string">`id`</span>)</span><br><span class="line">) <span class="keyword">ENGINE</span>=<span class="keyword">InnoDB</span> AUTO_INCREMENT=<span class="number">9</span> <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span>=utf8mb4 <span class="keyword">COLLATE</span>=utf8mb4_0900_ai_ci;</span><br></pre></td></tr></table></figure>
 <p>sql数据:  </p>
@@ -272,6 +273,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2019/05/02-InnoDB-B-树索引.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          InnoDB-B+树索引
+        
+      </div>
+    </a>
   
   
     <a href="/2018/07/15-delayed-task.html" id="article-nav-older" class="article-nav-link-wrap">
@@ -393,7 +403,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ABA</a>
+                <a href="javascript:void(0)" class="js-tag color4">sql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -401,11 +411,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">hashCode</a>
+                <a href="javascript:void(0)" class="js-tag color2">inputstream</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">inputstream</a>
+                <a href="javascript:void(0)" class="js-tag color4">ABA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">hashCode</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -417,27 +431,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mybatis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">pageHelper</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">sql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">try</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">ebook</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">cluster</a>
+                <a href="javascript:void(0)" class="js-tag color3">索引</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">try</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -446,10 +448,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">yilia</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">cache</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -462,6 +460,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">并发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">cluster</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mybatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">pageHelper</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">cache</a>
               </li>
             
             <div class="clearfix"></div>

@@ -143,6 +143,288 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-InnoDB-全文索引" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/02-InnoDB-全文索引.html">InnoDB-全文索引</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/02-InnoDB-全文索引.html" class="archive-article-date">
+  	<time datetime="2019-05-02T05:44:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>摘自<em>MySQL技术内幕-InnoDB存储引擎</em></p>
+<p>全文索引(<code>Full Text Search</code>)是将存储于数据库中的整本书或整篇文章中的任意内容信息查找出来的技术。在InnoDB1.2.x版本之前，是不支持全文检索的，而在1.2.x版本之后支持MyISAM存储引擎全文检索的全部功能</p>
+<h3 id="倒排索引"><a href="#倒排索引" class="headerlink" title="倒排索引"></a>倒排索引</h3><p>全文索引通常使用倒排索引(<code>inverted index</code>)实现。倒排索引同B+树索引一样，也是一种索引结构。它在辅助表(<code>auxiliary table</code>)中存储了单词与单词自身在一个或者多个文档中所在的 位置之间的映射</p>
+<h3 id="InnoDB全文检索"><a href="#InnoDB全文检索" class="headerlink" title="InnoDB全文检索"></a>InnoDB全文检索</h3><p>InnoDB存储引擎从1.2.x版本开始支持全文检索技术，其采用 <code>full inverted index</code>的方式</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">sql</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">索引</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/mysql//" class="article-tag-list-link color1">mysql</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/02-InnoDB-全文索引.html">阅读全文&#39; >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-InnoDB-哈希索引" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/02-InnoDB-哈希索引.html">InnoDB-哈希索引</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/02-InnoDB-哈希索引.html" class="archive-article-date">
+  	<time datetime="2019-05-02T05:44:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>摘自<em>MySQL技术内幕-InnoDB存储引擎</em></p>
+<p>InnoDB存储引擎使用哈希算法对字典进行查找，其冲突机制采用链表方式，哈希函数采用除法散列方式</p>
+<h3 id="自适应哈希索引"><a href="#自适应哈希索引" class="headerlink" title="自适应哈希索引"></a>自适应哈希索引</h3><p>自适应哈希索引采用哈希表的方式实现。不同的是，这仅是数据库自身创建并使用的，DBA本身并不能对其进行干预。自适应哈希索引经哈希函数映射到一个哈希表中，因此对字典类型的查找非常快速，如<code>select * from table where col=&#39;tom&#39;</code>,但对于范围查找就无能为力了</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">sql</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">索引</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/mysql//" class="article-tag-list-link color1">mysql</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/02-InnoDB-哈希索引.html">阅读全文&#39; >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-InnoDB-B-树索引" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/05/02-InnoDB-B-树索引.html">InnoDB-B+树索引</a>
+    </h1>
+  
+
+        
+        <a href="/2019/05/02-InnoDB-B-树索引.html" class="archive-article-date">
+  	<time datetime="2019-05-02T05:41:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-05-02</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>摘自<em>MySQL技术内幕-InnoDB存储引擎</em></p>
+<blockquote>
+<p>B+ 树索引的本质就是 B+ 树在数据库中的实现。在数据库一般在2~4层</p>
+</blockquote>
+<h3 id="B-树索引种类"><a href="#B-树索引种类" class="headerlink" title="B+ 树索引种类"></a>B+ 树索引种类</h3><p>B+ 树索引种类:</p>
+<ul>
+<li>聚集索引(<code>clustered index</code>)</li>
+<li>辅助索引(<code>secondary index</code>)</li>
+</ul>
+        
+          <a class="article-more-a" href="/2019/05/02-InnoDB-B-树索引.html#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">sql</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">索引</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/mysql//" class="article-tag-list-link color1">mysql</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/05/02-InnoDB-B-树索引.html">阅读全文&#39; >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-sql-continue-day" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -165,21 +447,9 @@
       
         <p>最近碰到一个sql问题：要求连续三天及以上，并且每天人流量均不少于100</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt; select * from t_people_stat;</span><br><span class="line">+<span class="comment">----+------------+--------+</span></span><br><span class="line">| id | start_date | people |</span><br><span class="line">+<span class="comment">----+------------+--------+</span></span><br><span class="line">|  1 | 2019-04-03 |    100 |</span><br><span class="line">|  3 | 2019-04-04 |     90 |</span><br><span class="line">|  4 | 2019-04-05 |     80 |</span><br><span class="line">|  5 | 2019-04-06 |    105 |</span><br><span class="line">|  6 | 2019-04-07 |    109 |</span><br><span class="line">|  7 | 2019-04-09 |    100 |</span><br><span class="line">|  8 | 2019-04-10 |     70 |</span><br><span class="line">+<span class="comment">----+------------+--------+</span></span><br><span class="line">7 rows in <span class="keyword">set</span> (<span class="number">0.13</span> sec)</span><br></pre></td></tr></table></figure>
-<h3 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h3><p>建表:  </p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="string">`t_people_stat`</span> (</span><br><span class="line">  <span class="string">`id`</span> <span class="built_in">int</span>(<span class="number">11</span>) <span class="keyword">NOT</span> <span class="literal">NULL</span> AUTO_INCREMENT,</span><br><span class="line">  <span class="string">`start_date`</span> <span class="built_in">date</span> <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  <span class="string">`people`</span> <span class="built_in">int</span>(<span class="number">255</span>) <span class="keyword">DEFAULT</span> <span class="literal">NULL</span>,</span><br><span class="line">  PRIMARY <span class="keyword">KEY</span> (<span class="string">`id`</span>)</span><br><span class="line">) <span class="keyword">ENGINE</span>=<span class="keyword">InnoDB</span> AUTO_INCREMENT=<span class="number">9</span> <span class="keyword">DEFAULT</span> <span class="keyword">CHARSET</span>=utf8mb4 <span class="keyword">COLLATE</span>=utf8mb4_0900_ai_ci;</span><br></pre></td></tr></table></figure>
-<p>sql数据:  </p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">`spring`</span>.<span class="string">`t_people_stat`</span>(<span class="string">`id`</span>, <span class="string">`start_date`</span>, <span class="string">`people`</span>) <span class="keyword">VALUES</span> (<span class="number">1</span>, <span class="string">'2019-04-03'</span>, <span class="number">100</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">`spring`</span>.<span class="string">`t_people_stat`</span>(<span class="string">`id`</span>, <span class="string">`start_date`</span>, <span class="string">`people`</span>) <span class="keyword">VALUES</span> (<span class="number">3</span>, <span class="string">'2019-04-04'</span>, <span class="number">90</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">`spring`</span>.<span class="string">`t_people_stat`</span>(<span class="string">`id`</span>, <span class="string">`start_date`</span>, <span class="string">`people`</span>) <span class="keyword">VALUES</span> (<span class="number">4</span>, <span class="string">'2019-04-05'</span>, <span class="number">80</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">`spring`</span>.<span class="string">`t_people_stat`</span>(<span class="string">`id`</span>, <span class="string">`start_date`</span>, <span class="string">`people`</span>) <span class="keyword">VALUES</span> (<span class="number">5</span>, <span class="string">'2019-04-06'</span>, <span class="number">105</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">`spring`</span>.<span class="string">`t_people_stat`</span>(<span class="string">`id`</span>, <span class="string">`start_date`</span>, <span class="string">`people`</span>) <span class="keyword">VALUES</span> (<span class="number">6</span>, <span class="string">'2019-04-07'</span>, <span class="number">109</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">`spring`</span>.<span class="string">`t_people_stat`</span>(<span class="string">`id`</span>, <span class="string">`start_date`</span>, <span class="string">`people`</span>) <span class="keyword">VALUES</span> (<span class="number">7</span>, <span class="string">'2019-04-09'</span>, <span class="number">100</span>);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="string">`spring`</span>.<span class="string">`t_people_stat`</span>(<span class="string">`id`</span>, <span class="string">`start_date`</span>, <span class="string">`people`</span>) <span class="keyword">VALUES</span> (<span class="number">8</span>, <span class="string">'2019-04-10'</span>, <span class="number">70</span>);</span><br></pre></td></tr></table></figure>
-<h3 id="解决思路"><a href="#解决思路" class="headerlink" title="解决思路"></a>解决思路</h3><ul>
-<li>过滤掉人流量&lt;100的记录</li>
-<li>生成虚拟的自增长列gid</li>
-<li>用mysql数据库中自增长的id减去虚拟的自增长的列gid,即(id-gid) as diff，构造成等差数列</li>
-<li>如果diff相同，则说明是连续的</li>
-</ul>
-<h3 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h3><p>这里还用到了<code>FIND_IN_SET</code>和<code>GROUP_CONCAT</code>函数，<em>注意：GROUP_CONCAT默认最长为1024个字节</em></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">	tps.*</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	t_people_stat tps,</span><br><span class="line">(<span class="keyword">SELECT</span></span><br><span class="line">	tps.id,</span><br><span class="line">	tps.start_date,</span><br><span class="line">	tps.people,</span><br><span class="line">	( tps.id - tps.gid ) diff,</span><br><span class="line">	<span class="keyword">GROUP_CONCAT</span>(tps.id <span class="keyword">ORDER</span> <span class="keyword">BY</span> tps.id) ids,</span><br><span class="line">	<span class="keyword">GROUP_CONCAT</span>(tps.people) peoples</span><br><span class="line"><span class="keyword">FROM</span></span><br><span class="line">	( <span class="keyword">SELECT</span> tps.*, @a := @a + <span class="number">1</span> gid <span class="keyword">FROM</span> t_people_stat tps, ( <span class="keyword">SELECT</span> @a := <span class="number">0</span> ) <span class="keyword">AS</span> t <span class="keyword">WHERE</span> tps.people &gt;= <span class="number">100</span>) tps</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> diff <span class="keyword">HAVING</span> <span class="keyword">count</span>(<span class="keyword">id</span>) &gt;= <span class="number">3</span>)tpss</span><br><span class="line"><span class="keyword">WHERE</span></span><br><span class="line">FIND_IN_SET(tps.id,tpss.ids)</span><br></pre></td></tr></table></figure>
-<p>输出结果:  </p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">+<span class="comment">----+------------+--------+</span></span><br><span class="line">| id | start_date | people |</span><br><span class="line">+<span class="comment">----+------------+--------+</span></span><br><span class="line">|  5 | 2019-04-06 |    105 |</span><br><span class="line">|  6 | 2019-04-07 |    109 |</span><br><span class="line">|  7 | 2019-04-09 |    100 |</span><br><span class="line">+<span class="comment">----+------------+--------+</span></span><br><span class="line">3 rows in <span class="keyword">set</span> (<span class="number">0.06</span> sec)</span><br></pre></td></tr></table></figure>
-
+        
+          <a class="article-more-a" href="/2019/04/08-sql-continue-day.html#more">more >></a>
+        
       
 
       
@@ -335,288 +605,6 @@
 
 
   
-    <article id="post-linux-zookeeper-claster-one-host" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/07/08-linux-zookeeper-claster-one-host.html">linux中安装单机版zookeeper集群服务</a>
-    </h1>
-  
-
-        
-        <a href="/2018/07/08-linux-zookeeper-claster-one-host.html" class="archive-article-date">
-  	<time datetime="2018-07-08T00:44:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-07-08</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="创建配置文件"><a href="#创建配置文件" class="headerlink" title="创建配置文件"></a>创建配置文件</h3><p>首先在zookeeper安装目录下的<code>conf</code>目录下创建3个配置文件<code>zoo1.cfg</code>,<code>zoo2.cfg</code>,<code>zoo2.cfg</code>,这三个配置文件差不多，只是有一点微小的差别，我的目录是<code>/opt/soft/zookeeper-3.4.12/conf</code>  </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost conf]<span class="comment"># tree</span></span><br><span class="line">.</span><br><span class="line">├── configuration.xsl</span><br><span class="line">├── log4j.properties</span><br><span class="line">├── zoo1.cfg</span><br><span class="line">├── zoo2.cfg</span><br><span class="line">├── zoo3.cfg</span><br><span class="line">├── zookeeper.out</span><br><span class="line">└── zoo_sample.cfg</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2018/07/08-linux-zookeeper-claster-one-host.html#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">cluster</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/zookeeper//" class="article-tag-list-link color5">zookeeper</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/07/08-linux-zookeeper-claster-one-host.html">阅读全文&#39; >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-mybatis-column-pro" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/30-mybatis-column-pro.html">mybatis中association和collection的column传入多个参数值</a>
-    </h1>
-  
-
-        
-        <a href="/2018/05/30-mybatis-column-pro.html" class="archive-article-date">
-  	<time datetime="2018-05-30T15:43:58.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="mybatis中association和collection的column传入多个参数值"><a href="#mybatis中association和collection的column传入多个参数值" class="headerlink" title="mybatis中association和collection的column传入多个参数值"></a>mybatis中association和collection的column传入多个参数值</h2><p>项目中在使用association和collection实现一对一和一对多关系时需要对关系中结果集进行筛选，如果使用懒加载模式，即联合使用<code>select</code>标签时，主sql和关系映射里的sql是分开的，查询参数传递成为问题。</p>
-<p><strong>mybatis文档:</strong>  </p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">property</th>
-<th style="text-align:left">description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">column</td>
-<td style="text-align:left">数据库的列名或者列标签别名。与传递给resultSet.getString(columnName)的参数名称相同。注意： 在处理组合键时，您可以使用column=“{prop1=col1,prop2=col2}”这样的语法，设置多个列名传入到嵌套查询语句。这就会把prop1和prop2设置到目标嵌套选择语句的参数对象中。</td>
-</tr>
-</tbody>
-</table>
-        
-          <a class="article-more-a" href="/2018/05/30-mybatis-column-pro.html#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">association</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">collection</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/mybatis//" class="article-tag-list-link color3">mybatis</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/30-mybatis-column-pro.html">阅读全文&#39; >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-row-to-column-secd" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/05/28-row-to-column-secd.html">行列转换(二)</a>
-    </h1>
-  
-
-        
-        <a href="/2018/05/28-row-to-column-secd.html" class="archive-article-date">
-  	<time datetime="2018-05-28T14:03:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="情景一"><a href="#情景一" class="headerlink" title="情景一"></a>情景一</h4><p>1.有限列类型:</p>
-<figure class="highlight console"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">+----+----------+-------+--------+</span><br><span class="line">| id | fruit_id | color | weight |</span><br><span class="line">+----+----------+-------+--------+</span><br><span class="line">|  1 |        1 | 红    |     23 |</span><br><span class="line">|  2 |        1 | 黑    |     54 |</span><br><span class="line">|  3 |        2 | 红    |     12 |</span><br><span class="line">|  4 |        2 | 黑    |     43 |</span><br><span class="line">|  5 |        3 | 黑    |     90 |</span><br><span class="line">+----+----------+-------+--------+</span><br><span class="line">                |</span><br><span class="line">                V</span><br><span class="line"></span><br><span class="line">      +----------+----+----+</span><br><span class="line">      | fruit_id | 红 | 黑 |</span><br><span class="line">      +----------+----+----+</span><br><span class="line">      |        1 | 23 | 54 |</span><br><span class="line">      |        2 | 12 | 43 |</span><br><span class="line">      |        3 |  0 | 90 |</span><br><span class="line">      +----------+----+----+</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2018/05/28-row-to-column-secd.html#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">sql</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/mysql//" class="article-tag-list-link color1">mysql</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/05/28-row-to-column-secd.html">阅读全文&#39; >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -706,7 +694,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ABA</a>
+                <a href="javascript:void(0)" class="js-tag color4">sql</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -714,11 +702,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">hashCode</a>
+                <a href="javascript:void(0)" class="js-tag color2">inputstream</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">inputstream</a>
+                <a href="javascript:void(0)" class="js-tag color4">ABA</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">hashCode</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -730,27 +722,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">mybatis</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">pageHelper</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">sql</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">try</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">ebook</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">cluster</a>
+                <a href="javascript:void(0)" class="js-tag color3">索引</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">try</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -759,10 +739,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">yilia</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">cache</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -775,6 +751,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">并发</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">cluster</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">mybatis</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">pageHelper</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">cache</a>
               </li>
             
             <div class="clearfix"></div>
